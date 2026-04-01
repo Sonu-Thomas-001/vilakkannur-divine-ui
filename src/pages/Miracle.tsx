@@ -1,50 +1,9 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-
-const timeline = [
-  {
-    id: "01",
-    title: "The Moment",
-    subtitle: "November 15, 2013",
-    description: "A quiet morning Mass. As the priest elevated the host, an extraordinary light emerged, altering the course of a small parish forever.",
-    image: "https://picsum.photos/seed/moment/800/1000",
-    align: "left"
-  },
-  {
-    id: "02",
-    title: "The Appearance",
-    subtitle: "The Face of Christ",
-    description: "The distinct face of Jesus Christ, crowned with thorns, formed on the consecrated bread. A congregation was left in absolute awe and silence.",
-    image: "https://picsum.photos/seed/appearance/800/1000",
-    align: "right"
-  },
-  {
-    id: "03",
-    title: "The Investigation",
-    subtitle: "Science & Theology",
-    description: "Years of rigorous scrutiny. Independent laboratories and the Vatican's careful examination of the inexplicable, confirming the absence of artificial pigments.",
-    image: "https://picsum.photos/seed/investigation/800/1000",
-    align: "left"
-  },
-  {
-    id: "04",
-    title: "The Recognition",
-    subtitle: "Vatican Approval, 2025",
-    description: "Officially recognized as a true Eucharistic Miracle. A profound gift to the universal Church and a testament to divine presence in the modern age.",
-    image: "https://picsum.photos/seed/recognition/800/1000",
-    align: "right"
-  },
-  {
-    id: "05",
-    title: "The Impact",
-    subtitle: "A Global Sanctuary",
-    description: "Thousands journey to Vilakkannur seeking solace, healing, and a deeper connection with the Divine. A quiet village transformed into a beacon of faith.",
-    image: "https://picsum.photos/seed/impact/800/1000",
-    align: "left"
-  }
-];
+import { useTranslation } from "react-i18next";
 
 export default function Miracle() {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -52,6 +11,49 @@ export default function Miracle() {
   });
 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  const timeline = [
+    {
+      id: "01",
+      title: t("miracle.timeline.01.title", "The Moment"),
+      subtitle: t("miracle.timeline.01.subtitle", "November 15, 2013"),
+      description: t("miracle.timeline.01.desc", "A quiet morning Mass. As the priest elevated the host, an extraordinary light emerged, altering the course of a small parish forever."),
+      image: "https://picsum.photos/seed/moment/800/1000",
+      align: "left"
+    },
+    {
+      id: "02",
+      title: t("miracle.timeline.02.title", "The Appearance"),
+      subtitle: t("miracle.timeline.02.subtitle", "The Face of Christ"),
+      description: t("miracle.timeline.02.desc", "The distinct face of Jesus Christ, crowned with thorns, formed on the consecrated bread. A congregation was left in absolute awe and silence."),
+      image: "https://picsum.photos/seed/appearance/800/1000",
+      align: "right"
+    },
+    {
+      id: "03",
+      title: t("miracle.timeline.03.title", "The Investigation"),
+      subtitle: t("miracle.timeline.03.subtitle", "Science & Theology"),
+      description: t("miracle.timeline.03.desc", "Years of rigorous scrutiny. Independent laboratories and the Vatican's careful examination of the inexplicable, confirming the absence of artificial pigments."),
+      image: "https://picsum.photos/seed/investigation/800/1000",
+      align: "left"
+    },
+    {
+      id: "04",
+      title: t("miracle.timeline.04.title", "The Recognition"),
+      subtitle: t("miracle.timeline.04.subtitle", "Vatican Approval, 2025"),
+      description: t("miracle.timeline.04.desc", "Officially recognized as a true Eucharistic Miracle. A profound gift to the universal Church and a testament to divine presence in the modern age."),
+      image: "https://picsum.photos/seed/recognition/800/1000",
+      align: "right"
+    },
+    {
+      id: "05",
+      title: t("miracle.timeline.05.title", "The Impact"),
+      subtitle: t("miracle.timeline.05.subtitle", "A Global Sanctuary"),
+      description: t("miracle.timeline.05.desc", "Thousands journey to Vilakkannur seeking solace, healing, and a deeper connection with the Divine. A quiet village transformed into a beacon of faith."),
+      image: "https://picsum.photos/seed/impact/800/1000",
+      align: "left"
+    }
+  ];
 
   return (
     <div className="w-full bg-deep-black text-warm-100 overflow-hidden">
@@ -73,14 +75,14 @@ export default function Miracle() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="container mx-auto max-w-5xl relative z-10 text-center mt-20"
+          className="container mx-auto max-w-5xl relative z-10 text-center px-4 md:px-6 mt-20"
         >
-          <span className="text-gold-400 font-serif italic text-2xl mb-6 block tracking-widest uppercase">The Divine Sign</span>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif text-white mb-10 leading-[1.1] tracking-tight">
-            The Eucharistic <br/><span className="text-gradient-gold italic pr-4">Miracle</span>
+          <span className="text-gold-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("miracle.hero.badge", "The Divine Sign")}</span>
+          <h1 className="text-white mb-6 md:mb-10 tracking-tight">
+            <span dangerouslySetInnerHTML={{ __html: t("miracle.hero.title", "The Eucharistic <br/><span class='text-gradient-gold italic pr-4'>Miracle</span>") }} />
           </h1>
-          <p className="text-warm-200/80 text-2xl md:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
-            A profound manifestation of Christ's real presence that drew the world's eyes to Vilakkannur.
+          <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
+            {t("miracle.hero.subtitle", "A profound manifestation of Christ's real presence that drew the world's eyes to Vilakkannur.")}
           </p>
         </motion.div>
         
@@ -91,7 +93,7 @@ export default function Miracle() {
           transition={{ delay: 2, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20"
         >
-          <span className="text-warm-200/50 text-xs uppercase tracking-widest font-medium">Scroll to Discover</span>
+          <span className="text-warm-200/50 text-xs uppercase tracking-widest font-medium">{t("home.hero.scroll", "Scroll to Discover")}</span>
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -103,8 +105,8 @@ export default function Miracle() {
       </section>
 
       {/* Storytelling Timeline Section */}
-      <section className="py-32 md:py-48 relative bg-deep-black" ref={containerRef}>
-        <div className="container mx-auto px-6 md:px-12 max-w-7xl relative">
+      <section className="section-padding relative bg-deep-black" ref={containerRef}>
+        <div className="container mx-auto max-w-7xl relative">
           
           {/* Central Line Background */}
           <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-white/5 -translate-x-1/2"></div>
@@ -115,9 +117,9 @@ export default function Miracle() {
             style={{ height: lineHeight }}
           ></motion.div>
 
-          <div className="space-y-32 md:space-y-64 relative z-10">
+          <div className="space-y-24 md:space-y-48 lg:space-y-64 relative z-10">
             {timeline.map((item) => (
-              <div key={item.id} className={`relative flex flex-col md:flex-row items-center gap-12 md:gap-0 ${item.align === 'right' ? 'md:flex-row-reverse' : ''}`}>
+              <div key={item.id} className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-0 ${item.align === 'right' ? 'md:flex-row-reverse' : ''}`}>
                 
                 {/* Timeline Glowing Node */}
                 <div className="absolute left-6 md:left-1/2 top-0 md:top-1/2 w-4 h-4 rounded-full bg-deep-black border-2 border-gold-400 -translate-x-1/2 md:-translate-y-1/2 shadow-[0_0_20px_rgba(250,204,21,0.8)] z-20 mt-8 md:mt-0">
@@ -130,13 +132,13 @@ export default function Miracle() {
                   whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 1.2, ease: "easeOut" }}
-                  className={`w-full md:w-1/2 pl-16 md:pl-0 ${item.align === 'left' ? 'md:text-right md:pr-24' : 'md:text-left md:pl-24'}`}
+                  className={`w-full md:w-1/2 pl-16 md:pl-0 ${item.align === 'left' ? 'md:text-right md:pr-16 lg:pr-24' : 'md:text-left md:pl-16 lg:pl-24'}`}
                 >
-                  <span className="text-gold-400 font-serif italic text-2xl mb-4 block tracking-widest">{item.subtitle}</span>
-                  <h2 className="text-5xl md:text-7xl font-serif text-white mb-8 leading-tight">
+                  <span className="text-gold-400 font-serif italic text-xl md:text-2xl mb-3 md:mb-4 block tracking-widest">{item.subtitle}</span>
+                  <h2 className="text-white mb-6 md:mb-8 leading-tight">
                     {item.title}
                   </h2>
-                  <p className="text-warm-200/70 text-xl md:text-2xl font-light leading-relaxed">
+                  <p className="text-warm-200/70 text-lg md:text-xl lg:text-2xl font-light leading-relaxed">
                     {item.description}
                   </p>
                 </motion.div>
@@ -147,7 +149,7 @@ export default function Miracle() {
                   whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 1.5, ease: "easeOut" }}
-                  className={`w-full md:w-1/2 pl-16 md:pl-0 ${item.align === 'left' ? 'md:pl-24' : 'md:pr-24'}`}
+                  className={`w-full md:w-1/2 pl-16 md:pl-0 ${item.align === 'left' ? 'md:pl-16 lg:pl-24' : 'md:pr-16 lg:pr-24'}`}
                 >
                   <div className="relative aspect-[4/5] rounded-3xl overflow-hidden group">
                     {/* Light Aura Effect */}

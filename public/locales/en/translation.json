@@ -1,0 +1,286 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "miracle": "The Miracle",
+    "visit": "Visit",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "footer": {
+    "church_name": "Christ the King Church",
+    "location": "Vilakkannur",
+    "description": "A sanctuary of peace and a site of the miraculous Eucharistic event. We welcome pilgrims and visitors from around the world to experience the divine presence in the heart of Kerala.",
+    "quick_links": "Quick Links",
+    "contact_us": "Contact Us",
+    "address": "Vilakkannur, Naduvil P.O,<br />Kannur District, Kerala 670582",
+    "phone": "+91 460 222 0000",
+    "email": "info@vilakkannurchurch.org",
+    "copyright": "© {{year}} Christ the King Church, Vilakkannur. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "home": {
+    "hero": {
+      "badge": "The Eucharistic Miracle",
+      "title": "Where Faith Meets <br /><span class='text-gradient-gold italic pr-4'>the Divine</span>",
+      "subtitle": "Witness the miracle that transformed Vilakkannur into a global pilgrimage destination.",
+      "cta_primary": "Explore the Miracle",
+      "cta_secondary": "Plan Your Visit",
+      "scroll": "Scroll to Explore"
+    },
+    "cards": {
+      "about": {
+        "title": "About the Church",
+        "desc": "A serene sanctuary in the hills of Kerala, rooted in deep faith and community heritage."
+      },
+      "pilgrimage": {
+        "title": "Pilgrimage Importance",
+        "desc": "A global destination for spiritual renewal, healing, and witnessing the Eucharistic Miracle."
+      },
+      "visitor": {
+        "title": "Visitor Information",
+        "desc": "Open daily for pilgrims. Join us for Holy Mass, adoration, and peaceful reflection."
+      }
+    },
+    "grid": {
+      "miracle": {
+        "subtitle": "The Divine Sign",
+        "title": "The Eucharistic Miracle",
+        "desc": "Witness the profound manifestation of Christ's real presence that drew the world's eyes to Vilakkannur."
+      },
+      "spiritual": {
+        "title": "Spiritual Experience",
+        "desc": "Find peace and renewal in our vibrant faith community."
+      },
+      "visit": {
+        "title": "Plan Your Visit",
+        "desc": "Mass timings and directions"
+      },
+      "gallery": {
+        "title": "Visual Gallery",
+        "desc": "Glimpses of grace"
+      }
+    },
+    "parallax": {
+      "title": "Experience the <span class='text-gradient-gold italic pr-4'>Presence</span>"
+    },
+    "cta": {
+      "title": "Plan Your Spiritual Journey <br class='hidden md:block'/> to Vilakkannur",
+      "primary": "Plan Visit",
+      "secondary": "Contact"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Our Heritage",
+      "title": "Christ the King <br/><span class='text-gradient-emerald italic pr-4'>Church</span>",
+      "subtitle": "A sanctuary of faith nestled in the hills of Kerala, where history and divine grace intertwine."
+    },
+    "history": {
+      "badge": "Our Origins",
+      "title": "A Legacy of Faith <br /><span class='text-gradient-gold'>in Malabar</span>",
+      "p1": "The history of Christ the King Church is deeply rooted in the migration of farming communities to the hilly terrains of Malabar in the mid-20th century. Seeking fertile land and a new life, these pioneers brought with them a profound Catholic faith.",
+      "p2": "Initially, spiritual needs were met through makeshift chapels and visiting priests. As the community grew, the need for a permanent place of worship became evident. Through immense sacrifice, collective effort, and unwavering devotion, the first church structure was erected, becoming the spiritual heartbeat of Vilakkannur."
+    },
+    "location": {
+      "badge": "The Sanctuary",
+      "title": "Nestled in the <br /><span class='text-gradient-emerald'>Hills of Kerala</span>",
+      "p1": "Vilakkannur is a serene, rural village characterized by its lush green landscapes, rolling hills, and tranquil atmosphere. Far from the noise of the city, the church's location naturally fosters a sense of peace and contemplation.",
+      "p2": "The architecture of the church blends traditional Kerala elements with classic Catholic design, creating a space that feels both majestic and deeply welcoming. The surrounding nature acts as a silent witness to the prayers of thousands who visit seeking solace."
+    },
+    "growth": {
+      "title": "A Global Pilgrimage Center",
+      "subtitle": "What was once a quiet parish serving local farmers has blossomed into an international beacon of faith, drawing believers from every corner of the globe.",
+      "community": {
+        "title": "Community Growth",
+        "desc": "Following the Eucharistic Miracle of 2013 and its subsequent Vatican recognition in 2025, the church experienced unprecedented growth. The local community expanded its mission to welcome, house, and guide the massive influx of pilgrims, transforming the village economy and social fabric while maintaining its spiritual core."
+      },
+      "spiritual": {
+        "title": "Spiritual Importance",
+        "desc": "Today, Christ the King Church stands as a profound testament to the Real Presence. It is a place of deep healing, where thousands report experiencing spiritual renewal, physical healings, and a profound sense of peace. The sanctuary serves as a living reminder that the divine actively touches the human experience."
+      }
+    }
+  },
+  "miracle": {
+    "hero": {
+      "badge": "The Divine Sign",
+      "title": "The Eucharistic <br/><span class='text-gradient-gold italic pr-4'>Miracle</span>",
+      "subtitle": "A profound manifestation of Christ's real presence that drew the world's eyes to Vilakkannur."
+    },
+    "timeline": {
+      "01": {
+        "title": "The Moment",
+        "subtitle": "November 15, 2013",
+        "desc": "A quiet morning Mass. As the priest elevated the host, an extraordinary light emerged, altering the course of a small parish forever."
+      },
+      "02": {
+        "title": "The Appearance",
+        "subtitle": "The Face of Christ",
+        "desc": "The distinct face of Jesus Christ, crowned with thorns, formed on the consecrated bread. A congregation was left in absolute awe and silence."
+      },
+      "03": {
+        "title": "The Investigation",
+        "subtitle": "Science & Theology",
+        "desc": "Years of rigorous scrutiny. Independent laboratories and the Vatican's careful examination of the inexplicable, confirming the absence of artificial pigments."
+      },
+      "04": {
+        "title": "The Recognition",
+        "subtitle": "Vatican Approval, 2025",
+        "desc": "Officially recognized as a true Eucharistic Miracle. A profound gift to the universal Church and a testament to divine presence in the modern age."
+      },
+      "05": {
+        "title": "The Impact",
+        "subtitle": "A Global Sanctuary",
+        "desc": "Thousands journey to Vilakkannur seeking solace, healing, and a deeper connection with the Divine. A quiet village transformed into a beacon of faith."
+      }
+    }
+  },
+  "visit": {
+    "hero": {
+      "badge": "Plan Your Journey",
+      "title": "Visit <span class='text-gradient-gold italic pr-4'>Vilakkannur</span>",
+      "subtitle": "Essential information for pilgrims and travelers seeking to experience the sanctuary."
+    },
+    "timing": {
+      "title": "Mass Timings",
+      "sun": {
+        "day": "Sundays",
+        "type": "Holy Mass"
+      },
+      "week": {
+        "day": "Weekdays",
+        "type": "Holy Mass"
+      },
+      "fri": {
+        "day": "First Fridays",
+        "type": "Mass & Adoration"
+      },
+      "tue": {
+        "day": "Tuesdays",
+        "type": "Special Novena"
+      }
+    },
+    "bestTime": {
+      "title": "Best Time to Visit",
+      "desc": "The ideal time to visit is between <strong class='text-white font-medium'>September and March</strong> when the weather in Kerala is pleasant and cool.",
+      "dates": {
+        "title": "Key Dates:",
+        "feast": "Feast of Christ the King",
+        "nov": "November",
+        "anniv": "Miracle Anniversary",
+        "nov15": "November 15"
+      }
+    },
+    "tips": {
+      "title": "Tips for Pilgrims",
+      "01": "Maintain silence and decorum within the church premises.",
+      "02": "Modest attire is requested for all visitors entering the sanctuary.",
+      "03": "Photography inside the church during Holy Mass is strictly prohibited.",
+      "04": "For large group pilgrimages, please contact the parish office in advance."
+    },
+    "reach": {
+      "title": "How to Reach",
+      "air": {
+        "title": "By Air",
+        "desc": "Kannur International Airport (CNN) is the nearest airport, located approximately 45 km away. Taxis are readily available."
+      },
+      "train": {
+        "title": "By Train",
+        "desc": "Kannur Railway Station (CAN) is the major railhead, about 50 km from the church."
+      },
+      "road": {
+        "title": "By Road",
+        "desc": "Regular bus services operate from Kannur and Taliparamba. The route is via Taliparamba - Sreekandapuram - Naduvil."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "01": {
+        "q": "Is there an entry fee to visit the church?",
+        "a": "No, there is no entry fee. The church is open to all visitors and pilgrims free of charge."
+      },
+      "02": {
+        "q": "Are there accommodation options nearby?",
+        "a": "While the village itself has limited commercial lodging, there are several guesthouses and hotels in nearby towns like Taliparamba and Kannur."
+      },
+      "03": {
+        "q": "Can I see the miraculous host?",
+        "a": "Yes, the miraculous host is installed for public veneration at the church. However, viewing times may be subject to the parish schedule."
+      },
+      "04": {
+        "q": "Is the church wheelchair accessible?",
+        "a": "Yes, the main sanctuary and primary facilities are accessible to visitors with mobility needs."
+      }
+    }
+  },
+  "gallery": {
+    "hero": {
+      "badge": "Visual Journey",
+      "title": "<span class='text-gradient-emerald italic pr-4'>Gallery</span>",
+      "subtitle": "Glimpses of our sacred space, spiritual events, and the serene surroundings."
+    },
+    "categories": {
+      "all": "All",
+      "church": "Church",
+      "events": "Events",
+      "miracle": "Miracle",
+      "pilgrimage": "Pilgrimage"
+    },
+    "images": {
+      "church_interior": "Church Interior",
+      "architecture": "Architecture",
+      "holy_mass": "Holy Mass",
+      "divine_light": "Divine Light",
+      "historical_view": "Historical View",
+      "sanctuary": "Sanctuary",
+      "pilgrimage_journey": "Pilgrimage Journey",
+      "altar_details": "Altar Details"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Get in Touch",
+      "title": "Contact <span class='text-gradient-gold italic pr-4'>Us</span>",
+      "subtitle": "We welcome your inquiries, prayer requests, and messages."
+    },
+    "info": {
+      "title": "Parish Office",
+      "address": {
+        "title": "Address",
+        "desc": "Christ the King Church<br />Vilakkannur, Naduvil P.O<br />Kannur District, Kerala 670582<br />India"
+      },
+      "phone": {
+        "title": "Phone",
+        "desc": "+91 460 222 0000<br />+91 944 000 0000 (Vicar)"
+      },
+      "email": {
+        "title": "Email",
+        "desc": "info@vilakkannurchurch.org<br />vicar@vilakkannurchurch.org"
+      }
+    },
+    "directions": {
+      "title": "Quick Directions",
+      "desc": "Located 45km from Kannur International Airport. Take the Taliparamba - Sreekandapuram route towards Naduvil. The church is prominently visible from the main road.",
+      "link": "Get Directions via Google Maps"
+    },
+    "form": {
+      "title": "Send a Message",
+      "subtitle": "Fill out the form below and our parish office will get back to you shortly.",
+      "first_name": "First Name",
+      "first_name_placeholder": "John",
+      "last_name": "Last Name",
+      "last_name_placeholder": "Doe",
+      "email": "Email Address",
+      "email_placeholder": "john@example.com",
+      "subject": "Subject",
+      "subject_general": "General Inquiry",
+      "subject_prayer": "Prayer Request",
+      "subject_visit": "Pilgrimage / Visit",
+      "subject_mass": "Mass Intention",
+      "message": "Message",
+      "message_placeholder": "How can we help you?",
+      "submit": "Send Message"
+    }
+  }
+}

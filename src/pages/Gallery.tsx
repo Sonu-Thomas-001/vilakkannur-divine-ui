@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const categories = ["All", "Church", "Events", "Miracle", "Pilgrimage"];
 
@@ -8,62 +9,63 @@ const images = [
   {
     id: 1,
     url: "https://picsum.photos/seed/church1/800/800",
-    title: "Church Interior",
+    titleKey: "gallery.images.church_interior",
     category: "Church",
     span: "md:col-span-2 md:row-span-2"
   },
   {
     id: 2,
     url: "https://picsum.photos/seed/church2/800/800",
-    title: "Architecture",
+    titleKey: "gallery.images.architecture",
     category: "Church",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 3,
     url: "https://picsum.photos/seed/events1/800/800",
-    title: "Holy Mass",
+    titleKey: "gallery.images.holy_mass",
     category: "Events",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 4,
     url: "https://picsum.photos/seed/miracle1/800/800",
-    title: "Divine Light",
+    titleKey: "gallery.images.divine_light",
     category: "Miracle",
     span: "md:col-span-2 md:row-span-1"
   },
   {
     id: 5,
     url: "https://picsum.photos/seed/church3/800/800",
-    title: "Historical View",
+    titleKey: "gallery.images.historical_view",
     category: "Church",
     span: "md:col-span-1 md:row-span-2"
   },
   {
     id: 6,
     url: "https://picsum.photos/seed/church4/800/800",
-    title: "Sanctuary",
+    titleKey: "gallery.images.sanctuary",
     category: "Church",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 7,
     url: "https://picsum.photos/seed/pilgrimage1/800/800",
-    title: "Pilgrimage Journey",
+    titleKey: "gallery.images.pilgrimage_journey",
     category: "Pilgrimage",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 8,
     url: "https://picsum.photos/seed/church5/800/800",
-    title: "Altar Details",
+    titleKey: "gallery.images.altar_details",
     category: "Church",
     span: "md:col-span-2 md:row-span-1"
   }
 ];
 
 export default function Gallery() {
+  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -91,36 +93,36 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="container mx-auto max-w-5xl relative z-10 text-center mt-20"
+          className="container mx-auto max-w-5xl relative z-10 text-center px-4 md:px-6 mt-20"
         >
-          <span className="text-emerald-400 font-serif italic text-2xl mb-6 block tracking-widest uppercase">Visual Journey</span>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif text-white mb-10 leading-[1.1] tracking-tight">
-            <span className="text-gradient-emerald italic pr-4">Gallery</span>
+          <span className="text-emerald-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("gallery.hero.badge", "Visual Journey")}</span>
+          <h1 className="text-white mb-6 md:mb-10 tracking-tight">
+            <span dangerouslySetInnerHTML={{ __html: t("gallery.hero.title", "<span class='text-gradient-emerald italic pr-4'>Gallery</span>") }} />
           </h1>
-          <p className="text-warm-200/80 text-2xl md:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
-            Glimpses of our sacred space, spiritual events, and the serene surroundings.
+          <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
+            {t("gallery.hero.subtitle", "Glimpses of our sacred space, spiritual events, and the serene surroundings.")}
           </p>
         </motion.div>
       </section>
 
       {/* Gallery Section */}
-      <section className="py-24 relative z-10">
+      <section className="section-padding relative z-10">
         <div className="glow-gold w-[600px] h-[600px] -right-64 top-0 opacity-10"></div>
-        <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+        <div className="container mx-auto max-w-7xl">
           
           {/* Categories Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-20">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 md:mb-20">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-8 py-3 rounded-full text-sm font-medium tracking-widest uppercase transition-all duration-500 border ${
+                className={`px-6 md:px-8 py-2 md:py-3 rounded-full text-xs md:text-sm font-medium tracking-widest uppercase transition-all duration-500 border ${
                   activeCategory === category
                     ? "bg-emerald-900/40 text-emerald-400 border-emerald-500/50 shadow-[0_0_20px_rgba(52,211,153,0.2)]"
                     : "bg-transparent text-warm-200/60 hover:text-white border-white/10 hover:border-white/30 hover:bg-white/5"
                 }`}
               >
-                {category}
+                {t(`gallery.categories.${category.toLowerCase()}`, category)}
               </button>
             ))}
           </div>
@@ -128,7 +130,7 @@ export default function Gallery() {
           {/* Masonry Grid */}
           <motion.div 
             layout
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-[300px]"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 auto-rows-[250px] md:auto-rows-[300px]"
           >
             <AnimatePresence>
               {filteredImages.map((img) => (
@@ -139,13 +141,13 @@ export default function Gallery() {
                   exit={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
                   transition={{ duration: 0.8 }}
                   key={img.id}
-                  className={`relative group overflow-hidden rounded-3xl cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)] border border-white/5 hover:border-white/20 transition-all ${img.span}`}
+                  className={`relative group overflow-hidden rounded-2xl md:rounded-3xl cursor-pointer shadow-[0_0_30px_rgba(0,0,0,0.5)] border border-white/5 hover:border-white/20 transition-all ${img.span.replace('md:', 'sm:')} col-span-1`}
                   onClick={() => setSelectedImage(img.url)}
                 >
                   <img
                     src={img.url}
                     loading="lazy"
-                    alt={img.title}
+                    alt={t(img.titleKey, img.titleKey.split('.').pop()?.replace('_', ' ') || '')}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                     referrerPolicy="no-referrer"
                   />
@@ -155,8 +157,8 @@ export default function Gallery() {
                     </div>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-deep-black via-deep-black/80 to-transparent translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
-                    <span className="text-gold-400 text-xs font-medium uppercase tracking-widest mb-2 block">{img.category}</span>
-                    <h3 className="text-white font-serif text-2xl tracking-wide">{img.title}</h3>
+                    <span className="text-gold-400 text-xs font-medium uppercase tracking-widest mb-2 block">{t(`gallery.categories.${img.category.toLowerCase()}`, img.category)}</span>
+                    <h3 className="text-white font-serif text-2xl tracking-wide">{t(img.titleKey, img.titleKey.split('.').pop()?.replace('_', ' ') || '')}</h3>
                   </div>
                 </motion.div>
               ))}

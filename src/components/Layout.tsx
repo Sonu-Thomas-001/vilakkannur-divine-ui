@@ -3,20 +3,23 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, MapPin, Phone, Mail, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "../lib/utils";
-
-const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "The Miracle", path: "/miracle" },
-  { name: "Visit", path: "/visit" },
-  { name: "Gallery", path: "/gallery" },
-  { name: "Contact", path: "/contact" },
-];
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 export function Layout() {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  const navLinks = [
+    { name: t("nav.home", "Home"), path: "/" },
+    { name: t("nav.about", "About"), path: "/about" },
+    { name: t("nav.miracle", "The Miracle"), path: "/miracle" },
+    { name: t("nav.visit", "Visit"), path: "/visit" },
+    { name: t("nav.gallery", "Gallery"), path: "/gallery" },
+    { name: t("nav.contact", "Contact"), path: "/contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,10 +53,10 @@ export function Layout() {
             </div>
             <div className="flex flex-col">
               <span className={cn("font-serif text-xl leading-tight transition-colors", isScrolled ? "text-white" : "text-white drop-shadow-md")}>
-                Christ the King
+                {t("footer.church_name", "Christ the King")}
               </span>
               <span className={cn("text-[10px] tracking-[0.2em] uppercase transition-colors", isScrolled ? "text-gold-400" : "text-white/80 drop-shadow-sm")}>
-                Vilakkannur Church
+                {t("footer.location", "Vilakkannur Church")}
               </span>
             </div>
           </Link>
@@ -74,19 +77,23 @@ export function Layout() {
                 {link.name}
               </Link>
             ))}
+            <LanguageSwitcher isScrolled={isScrolled} />
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <X className={cn("w-6 h-6", isScrolled ? "text-white" : "text-white")} />
-            ) : (
-              <Menu className={cn("w-6 h-6", isScrolled ? "text-white" : "text-white")} />
-            )}
-          </button>
+          <div className="md:hidden flex items-center gap-4">
+            <LanguageSwitcher isScrolled={isScrolled} />
+            <button
+              className="p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X className={cn("w-6 h-6", isScrolled ? "text-white" : "text-white")} />
+              ) : (
+                <Menu className={cn("w-6 h-6", isScrolled ? "text-white" : "text-white")} />
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -144,22 +151,20 @@ export function Layout() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-serif text-xl leading-tight text-white">
-                    Christ the King Church
+                    {t("footer.church_name", "Christ the King Church")}
                   </span>
                   <span className="text-[10px] tracking-[0.2em] uppercase text-gold-400/80">
-                    Vilakkannur
+                    {t("footer.location", "Vilakkannur")}
                   </span>
                 </div>
               </div>
               <p className="text-warm-50/60 text-sm leading-relaxed max-w-md">
-                A sanctuary of peace and a site of the miraculous Eucharistic event. 
-                We welcome pilgrims and visitors from around the world to experience 
-                the divine presence in the heart of Kerala.
+                {t("footer.description", "A sanctuary of peace and a site of the miraculous Eucharistic event. We welcome pilgrims and visitors from around the world to experience the divine presence in the heart of Kerala.")}
               </p>
             </div>
 
             <div>
-              <h4 className="font-serif text-lg text-gold-400 mb-6">Quick Links</h4>
+              <h4 className="font-serif text-lg text-gold-400 mb-6">{t("footer.quick_links", "Quick Links")}</h4>
               <ul className="space-y-3">
                 {navLinks.map((link) => (
                   <li key={link.name}>
@@ -176,19 +181,19 @@ export function Layout() {
             </div>
 
             <div>
-              <h4 className="font-serif text-lg text-gold-400 mb-6">Contact Us</h4>
+              <h4 className="font-serif text-lg text-gold-400 mb-6">{t("footer.contact_us", "Contact Us")}</h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-sm text-warm-50/60">
                   <MapPin className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
-                  <span>Vilakkannur, Naduvil P.O,<br />Kannur District, Kerala 670582</span>
+                  <span dangerouslySetInnerHTML={{ __html: t("footer.address", "Vilakkannur, Naduvil P.O,<br />Kannur District, Kerala 670582") }} />
                 </li>
                 <li className="flex items-center gap-3 text-sm text-warm-50/60">
                   <Phone className="w-5 h-5 text-gold-400 shrink-0" />
-                  <span>+91 460 222 0000</span>
+                  <span>{t("footer.phone", "+91 460 222 0000")}</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-warm-50/60">
                   <Mail className="w-5 h-5 text-gold-400 shrink-0" />
-                  <span>info@vilakkannurchurch.org</span>
+                  <span>{t("footer.email", "info@vilakkannurchurch.org")}</span>
                 </li>
               </ul>
             </div>
@@ -196,11 +201,11 @@ export function Layout() {
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-warm-50/40">
-              © {new Date().getFullYear()} Christ the King Church, Vilakkannur. All rights reserved.
+              {t("footer.copyright", "© {{year}} Christ the King Church, Vilakkannur. All rights reserved.", { year: new Date().getFullYear() })}
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-warm-50/40 hover:text-gold-400 transition-colors text-xs">Privacy Policy</a>
-              <a href="#" className="text-warm-50/40 hover:text-gold-400 transition-colors text-xs">Terms of Service</a>
+              <a href="#" className="text-warm-50/40 hover:text-gold-400 transition-colors text-xs">{t("footer.privacy", "Privacy Policy")}</a>
+              <a href="#" className="text-warm-50/40 hover:text-gold-400 transition-colors text-xs">{t("footer.terms", "Terms of Service")}</a>
             </div>
           </div>
         </div>
