@@ -61,7 +61,7 @@ export function Layout() {
         <div className={cn(
           "flex justify-between items-center transition-all duration-500 w-full",
           isScrolled 
-            ? "max-w-6xl bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5),0_0_15px_rgba(234,179,8,0.05)] rounded-full px-6 py-3" 
+            ? "max-w-6xl bg-black/40 backdrop-blur-xl border border-white/10 header-glass rounded-full px-6 py-3" 
             : "max-w-7xl bg-transparent border-transparent px-6 py-2"
         )}>
           <Link to="/" className="flex items-center gap-3 group">
@@ -107,7 +107,16 @@ export function Layout() {
             <ThemeToggle />
             <LanguageSwitcher isScrolled={isScrolled} />
             <button
-              className="p-2 rounded-full hover:bg-white/10 transition-colors"
+              className="p-2 rounded-full hover:bg-white/10 transition-all duration-300"
+              style={{
+                boxShadow: 'var(--shadow-glass)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = 'var(--shadow-btn-primary-hover)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = 'var(--shadow-glass)';
+              }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <Menu className={cn("w-6 h-6", isScrolled ? "text-white" : "text-white")} />
@@ -129,7 +138,16 @@ export function Layout() {
             <div className="flex justify-between items-center p-6 md:p-8">
               <img src="/logos/logo-dark.svg" alt="Vilakkannur Church" className="h-10" />
               <button
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-white"
+                style={{
+                  boxShadow: 'var(--shadow-glass)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = 'var(--shadow-btn-primary-hover)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = 'var(--shadow-glass)';
+                }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <X className="w-6 h-6" />

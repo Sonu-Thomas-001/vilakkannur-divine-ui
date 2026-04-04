@@ -31,6 +31,15 @@
 }
 
 @layer base {
+  :root {
+    --shadow-glass: 0 8px 32px 0 rgba(0,0,0,0.5);
+    --shadow-glass-dark: 0 8px 32px 0 rgba(0,0,0,0.8);
+    --shadow-btn-primary-hover: 0 0 25px rgba(255,255,255,0.15);
+    --shadow-btn-gold-hover: 0 0 35px rgba(234,179,8,0.25);
+    --shadow-card-hover: 0 20px 40px -10px rgba(255,255,255,0.05);
+    --shadow-header: 0 8px 32px 0 rgba(0,0,0,0.5), 0 0 15px rgba(234,179,8,0.05);
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -40,12 +49,34 @@
   
   body.light-mode {
     --color-deep-black: #FDFBF7;
-    --color-ink: #F5F2EB;
+    --color-ink: #FFFFFF;
     --color-warm-50: #111111;
     --color-warm-100: #222222;
     --color-warm-200: #333333;
     --color-white: #050505;
     --color-black: #FAFAF9;
+
+    --shadow-glass: 0 8px 32px 0 rgba(0,0,0,0.05);
+    --shadow-glass-dark: 0 8px 32px 0 rgba(0,0,0,0.1);
+    --shadow-btn-primary-hover: 0 0 25px rgba(0,0,0,0.15);
+    --shadow-btn-gold-hover: 0 0 35px rgba(234,179,8,0.15);
+    --shadow-card-hover: 0 20px 40px -10px rgba(0,0,0,0.1);
+    --shadow-header: 0 8px 32px 0 rgba(0,0,0,0.05), 0 0 15px rgba(234,179,8,0.1);
+  }
+
+  body.light-mode .glow-emerald,
+  body.light-mode .glow-gold {
+    opacity: 0.05 !important;
+  }
+
+  body.light-mode .light-ray {
+    opacity: 0.15 !important;
+    mix-blend-mode: normal !important;
+  }
+
+  body.light-mode .hero-bg-image {
+    opacity: 0.15 !important;
+    mix-blend-mode: normal !important;
   }
 
   /* Fluid Typography */
@@ -86,13 +117,19 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    box-shadow: var(--shadow-glass);
   }
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)];
+    @apply bg-black/40 backdrop-blur-2xl border border-white/5;
+    box-shadow: var(--shadow-glass-dark);
   }
   .glass-emerald {
-    @apply bg-emerald-950/60 backdrop-blur-xl border border-emerald-800/30 shadow-[0_8px_32px_0_rgba(2,44,34,0.5)];
+    @apply bg-emerald-950/60 backdrop-blur-xl border border-emerald-800/30;
+    box-shadow: var(--shadow-glass);
+  }
+  .header-glass {
+    box-shadow: var(--shadow-header);
   }
   .text-gradient-gold {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600;
@@ -101,13 +138,23 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-600;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white font-medium tracking-wide transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:shadow-[0_0_25px_rgba(255,255,255,0.15)] hover:-translate-y-1 hover:scale-[1.02];
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white font-medium tracking-wide transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1 hover:scale-[1.02];
+  }
+  .btn-primary:hover {
+    box-shadow: var(--shadow-btn-primary-hover);
   }
   .btn-gold {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-gold-500/20 to-gold-600/20 backdrop-blur-md border border-gold-500/30 text-gold-300 font-medium tracking-wide transition-all duration-500 hover:bg-gold-500/30 hover:border-gold-400/50 hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] hover:-translate-y-1 hover:scale-[1.02] hover:text-gold-200;
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-gold-500/20 to-gold-600/20 backdrop-blur-md border border-gold-500/30 text-gold-300 font-medium tracking-wide transition-all duration-500 hover:bg-gold-500/30 hover:border-gold-400/50 hover:-translate-y-1 hover:scale-[1.02] hover:text-gold-200;
+  }
+  .btn-gold:hover {
+    box-shadow: var(--shadow-btn-gold-hover);
   }
   .card-glass {
-    @apply bg-ink/50 backdrop-blur-xl border border-white/5 shadow-2xl rounded-3xl p-8 transition-all duration-500 hover:bg-white/[0.04] hover:border-white/15 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(255,255,255,0.05)];
+    @apply bg-ink/50 backdrop-blur-xl border border-white/5 rounded-3xl p-8 transition-all duration-500 hover:bg-white/[0.04] hover:border-white/15 hover:-translate-y-2;
+    box-shadow: var(--shadow-glass);
+  }
+  .card-glass:hover {
+    box-shadow: var(--shadow-card-hover);
   }
   .glow-emerald {
     @apply absolute rounded-full bg-emerald-500/20 blur-[120px] pointer-events-none;
