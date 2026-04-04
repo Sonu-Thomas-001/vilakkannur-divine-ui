@@ -31,8 +31,7 @@ export function LanguageSwitcher({ isScrolled }: { isScrolled: boolean }) {
   useEffect(() => {
     if (i18n.language) {
       const code = i18n.language.split('-')[0];
-      // Remove any existing lang-* classes
-      document.body.className = document.body.className.split(' ').filter(c => !c.startsWith('lang-')).join(' ');
+      document.body.className = document.body.className.replace(/lang-\w+/, '');
       document.body.classList.add(`lang-${code}`);
     }
   }, [i18n.language]);

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Serif+Malayalam:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -7,9 +7,6 @@
   --font-ml: "Noto Sans Malayalam", "Inter", sans-serif;
   --font-hi: "Noto Sans Devanagari", "Inter", sans-serif;
   --font-ta: "Noto Sans Tamil", "Inter", sans-serif;
-  --font-ml-serif: "Noto Serif Malayalam", "Playfair Display", serif;
-  --font-hi-serif: "Noto Serif Devanagari", "Playfair Display", serif;
-  --font-ta-serif: "Noto Serif Tamil", "Playfair Display", serif;
 
   --color-gold-200: #EAD08C;
   --color-gold-300: #E0C062;
@@ -111,14 +108,10 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
   }
-  body.lang-ml h1, body.lang-ml h2, body.lang-ml h3, body.lang-ml h4, body.lang-ml h5, body.lang-ml h6, body.lang-ml .font-serif {
-    font-family: var(--font-ml-serif) !important;
-  }
-  body.lang-hi h1, body.lang-hi h2, body.lang-hi h3, body.lang-hi h4, body.lang-hi h5, body.lang-hi h6, body.lang-hi .font-serif {
-    font-family: var(--font-hi-serif) !important;
-  }
-  body.lang-ta h1, body.lang-ta h2, body.lang-ta h3, body.lang-ta h4, body.lang-ta h5, body.lang-ta h6, body.lang-ta .font-serif {
-    font-family: var(--font-ta-serif) !important;
+  body.lang-ml h1, body.lang-ml h2, body.lang-ml h3, body.lang-ml h4, body.lang-ml h5, body.lang-ml h6,
+  body.lang-hi h1, body.lang-hi h2, body.lang-hi h3, body.lang-hi h4, body.lang-hi h5, body.lang-hi h6,
+  body.lang-ta h1, body.lang-ta h2, body.lang-ta h3, body.lang-ta h4, body.lang-ta h5, body.lang-ta h6 {
+    font-family: inherit;
   }
 }
 

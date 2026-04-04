@@ -85,7 +85,7 @@ export default function Home() {
             className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark border-gold-500/30"
           >
             <Sparkles className="w-4 h-4 text-gold-400" />
-            <span className="text-sm font-medium tracking-widest uppercase text-gold-300">{t("home.hero.badge", "The Eucharistic Miracle")}</span>
+            <span className="text-sm font-medium tracking-widest uppercase text-gold-300">The Eucharistic Miracle</span>
           </motion.div>
 
           <motion.h1
@@ -93,8 +93,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
             className="text-white mb-6 md:mb-8 max-w-6xl tracking-tight"
-            dangerouslySetInnerHTML={{ __html: t("home.hero.title", "Vilakkannur Church <br /><span class='text-gradient-gold italic pr-4'>Eucharistic Miracle</span>") }}
-          />
+          >
+            Vilakkannur Church <br /><span className='text-gradient-gold italic pr-4'>Eucharistic Miracle</span>
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -102,7 +103,7 @@ export default function Home() {
             transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
             className="text-warm-200/80 text-lg md:text-2xl lg:text-3xl max-w-3xl mx-auto mb-10 md:mb-12 font-light leading-relaxed"
           >
-            {t("home.hero.subtitle", "Witness the Catholic miracle in Kerala, India, that transformed Christ the King Church into a global spiritual tourism destination.")}
+            Witness the Catholic miracle in Kerala, India, that transformed Christ the King Church into a global spiritual tourism destination.
           </motion.p>
         </div>
 
@@ -112,7 +113,7 @@ export default function Home() {
           transition={{ delay: 2, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20"
         >
-          <span className="text-warm-200/50 text-xs uppercase tracking-widest font-medium">{t("home.hero.scroll", "Scroll to Discover")}</span>
+          <span className="text-warm-200/50 text-xs uppercase tracking-widest font-medium">Scroll to Discover</span>
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -134,15 +135,15 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="space-y-8"
             >
-              <h2 
-                className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight"
-                dangerouslySetInnerHTML={{ __html: t("home.cards.about.title", "A Sanctuary of <br /><span class='text-gradient-emerald italic'>Divine Grace</span>") }}
-              />
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight">
+                A Sanctuary of <br />
+                <span className="text-gradient-emerald italic">Divine Grace</span>
+              </h2>
               <p className="text-warm-200/70 text-lg md:text-xl font-light leading-relaxed">
-                {t("home.cards.about.desc", "Nestled in the serene hills of Kerala, Christ the King Church stands as a beacon of faith. It is here that the veil between heaven and earth thinned, revealing a profound sign of God's enduring presence among us.")}
+                Nestled in the serene hills of Kerala, Christ the King Church stands as a beacon of faith. It is here that the veil between heaven and earth thinned, revealing a profound sign of God's enduring presence among us.
               </p>
               <Link to="/about" className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 transition-colors uppercase tracking-widest text-sm font-medium">
-                {t("home.hero.cta_primary", "Discover Our History")} <ArrowRight className="w-4 h-4" />
+                Discover Our History <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
 
@@ -187,8 +188,8 @@ export default function Home() {
         
         <div className="container mx-auto max-w-5xl relative z-10">
           <div className="text-center mb-20">
-            <span className="text-gold-400 font-serif italic text-xl mb-4 block tracking-widest uppercase">{t("home.grid.miracle.subtitle", "The Event")}</span>
-            <h2 className="text-4xl md:text-6xl font-serif text-white">{t("home.grid.miracle.title", "The Miracle Unfolds")}</h2>
+            <span className="text-gold-400 font-serif italic text-xl mb-4 block tracking-widest uppercase">The Event</span>
+            <h2 className="text-4xl md:text-6xl font-serif text-white">The Miracle Unfolds</h2>
           </div>
 
           <div className="relative">
@@ -196,9 +197,9 @@ export default function Home() {
             <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-gold-500/30 to-transparent md:-translate-x-1/2"></div>
 
             {[
-              { year: "2013", title: t("miracle.timeline.02.title", "The Appearance"), desc: t("miracle.timeline.02.desc", "During morning Mass, the face of Christ miraculously appeared on the consecrated host.") },
-              { year: "2014-2024", title: t("miracle.timeline.03.title", "Rigorous Investigation"), desc: t("miracle.timeline.03.desc", "Extensive scientific and theological studies confirmed the phenomenon could not be explained naturally.") },
-              { year: "2025", title: t("miracle.timeline.04.title", "Vatican Recognition"), desc: t("miracle.timeline.04.desc", "Officially recognized as a true Eucharistic Miracle, drawing pilgrims worldwide.") }
+              { year: "2013", title: "The Appearance", desc: "During morning Mass, the face of Christ miraculously appeared on the consecrated host." },
+              { year: "2014-2024", title: "Rigorous Investigation", desc: "Extensive scientific and theological studies confirmed the phenomenon could not be explained naturally." },
+              { year: "2025", title: "Vatican Recognition", desc: "Officially recognized as a true Eucharistic Miracle, drawing pilgrims worldwide." }
             ].map((item, index) => (
               <motion.div 
                 key={index}
@@ -221,7 +222,7 @@ export default function Home() {
 
           <div className="text-center mt-16">
             <Link to="/miracle" className="btn-gold text-lg px-8 py-4 inline-flex items-center gap-2">
-              {t("home.hero.cta_primary", "Read the Full Story")} <ArrowRight className="w-5 h-5" />
+              Read the Full Story <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -231,7 +232,7 @@ export default function Home() {
       <section ref={gridRef} className="section-padding relative bg-deep-black overflow-hidden">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-white">{t("home.grid.gallery.title", "Glimpses of the Divine")}</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-white">Glimpses of the Divine</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 h-[800px] md:h-[600px]">
@@ -241,8 +242,8 @@ export default function Home() {
                 <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor.webp" loading="lazy" alt="Eucharistic Miracle" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
                 <div className="absolute bottom-8 left-8 z-10">
-                  <h3 className="text-3xl font-serif text-white mb-2">{t("gallery.images.divine_light", "The Sacred Host")}</h3>
-                  <p className="text-warm-200/80">{t("nav.gallery", "View Gallery")}</p>
+                  <h3 className="text-3xl font-serif text-white mb-2">The Sacred Host</h3>
+                  <p className="text-warm-200/80">View Gallery</p>
                 </div>
               </Link>
             </motion.div>
@@ -254,7 +255,7 @@ export default function Home() {
                   <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2010.jpg" loading="lazy" alt="Pilgrims" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
                   <div className="absolute bottom-6 left-6 z-10">
-                    <h3 className="text-xl font-serif text-white">{t("gallery.categories.pilgrimage", "Pilgrimage")}</h3>
+                    <h3 className="text-xl font-serif text-white">Pilgrimage</h3>
                   </div>
                 </Link>
               </motion.div>
@@ -265,7 +266,7 @@ export default function Home() {
                   <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2013.jpg" loading="lazy" alt="Candles" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
                   <div className="absolute bottom-6 left-6 z-10">
-                    <h3 className="text-xl font-serif text-white">{t("home.grid.devotion", "Devotion")}</h3>
+                    <h3 className="text-xl font-serif text-white">Devotion</h3>
                   </div>
                 </Link>
               </motion.div>
@@ -296,8 +297,9 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
             className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight drop-shadow-2xl"
-            dangerouslySetInnerHTML={{ __html: t("home.parallax.title", "Experience the <br class='md:hidden' /><span class='text-gradient-gold italic pr-4'>Presence</span>") }}
-          />
+          >
+            Experience the <br className="md:hidden" /><span className='text-gradient-gold italic pr-4'>Presence</span>
+          </motion.h2>
         </div>
       </section>
 
@@ -305,15 +307,15 @@ export default function Home() {
       <section className="section-padding relative bg-ink border-y border-white/5">
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
-            <span className="text-emerald-400 font-serif italic text-xl mb-4 block tracking-widest uppercase">{t("visit.hero.badge", "Plan Your Journey")}</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-white">{t("home.cards.visitor.title", "Visitor Information")}</h2>
+            <span className="text-emerald-400 font-serif italic text-xl mb-4 block tracking-widest uppercase">Plan Your Journey</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-white">Visitor Information</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
-              { icon: <Clock className="w-8 h-8" />, title: t("visit.timing.title", "Mass Timings"), desc: t("home.cards.visitor.desc", "Daily services and special adoration hours.") },
-              { icon: <MapPin className="w-8 h-8" />, title: t("visit.reach.title", "How to Reach"), desc: t("visit.reach.road.desc", "Directions from Kannur Airport and major stations.") },
-              { icon: <Calendar className="w-8 h-8" />, title: t("gallery.categories.events", "Special Events"), desc: t("visit.bestTime.desc", "Annual feasts and pilgrimage schedules.") }
+              { icon: <Clock className="w-8 h-8" />, title: "Mass Timings", desc: "Daily services and special adoration hours." },
+              { icon: <MapPin className="w-8 h-8" />, title: "How to Reach", desc: "Directions from Kannur Airport and major stations." },
+              { icon: <Calendar className="w-8 h-8" />, title: "Special Events", desc: "Annual feasts and pilgrimage schedules." }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -338,16 +340,16 @@ export default function Home() {
       <section className="section-padding relative bg-deep-black">
         <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-16">
-            <span className="text-emerald-400 font-serif italic text-xl mb-4 block tracking-widest uppercase">{t("home.faq.badge", "Answers")}</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-white">{t("visit.faq.title", "Frequently Asked Questions")}</h2>
+            <span className="text-emerald-400 font-serif italic text-xl mb-4 block tracking-widest uppercase">Answers</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-white">Frequently Asked Questions</h2>
           </div>
           
           <div className="space-y-6">
             {[
-              { q: t("home.faq.01.q", "Where is the Eucharistic Miracle of Vilakkannur located?"), a: t("home.faq.01.a", "The miracle took place at Christ the King Church in Vilakkannur, a village in the Kannur district of Kerala, India.") },
-              { q: t("home.faq.02.q", "When did the Vilakkannur Eucharistic Miracle happen?"), a: t("home.faq.02.a", "The miraculous event occurred on November 15, 2013, during a morning Holy Mass when the face of Jesus Christ appeared on the sacred host.") },
-              { q: t("home.faq.03.q", "Is the Vilakkannur miracle recognized by the Vatican?"), a: t("home.faq.03.a", "Yes, after years of rigorous scientific and theological investigation, the Vatican officially recognized the Eucharistic Miracle in 2025.") },
-              { q: t("home.faq.04.q", "How can I visit Vilakkannur Church?"), a: t("home.faq.04.a", "Vilakkannur is accessible by road from Kannur city and the Kannur International Airport. The church is open daily for pilgrims and visitors.") }
+              { q: "Where is the Eucharistic Miracle of Vilakkannur located?", a: "The miracle took place at Christ the King Church in Vilakkannur, a village in the Kannur district of Kerala, India." },
+              { q: "When did the Vilakkannur Eucharistic Miracle happen?", a: "The miraculous event occurred on November 15, 2013, during a morning Holy Mass when the face of Jesus Christ appeared on the sacred host." },
+              { q: "Is the Vilakkannur miracle recognized by the Vatican?", a: "Yes, after years of rigorous scientific and theological investigation, the Vatican officially recognized the Eucharistic Miracle in 2025." },
+              { q: "How can I visit Vilakkannur Church?", a: "Vilakkannur is accessible by road from Kannur city and the Kannur International Airport. The church is open daily for pilgrims and visitors." }
             ].map((faq, index) => (
               <div key={index} className="p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                 <h3 className="text-xl md:text-2xl font-serif text-gold-400 mb-3">{faq.q}</h3>
@@ -362,10 +364,10 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "FAQPage",
               "mainEntity": [
-                { "@type": "Question", "name": t("home.faq.01.q", "Where is the Eucharistic Miracle of Vilakkannur located?"), "acceptedAnswer": { "@type": "Answer", "text": t("home.faq.01.a", "The miracle took place at Christ the King Church in Vilakkannur, a village in the Kannur district of Kerala, India.") } },
-                { "@type": "Question", "name": t("home.faq.02.q", "When did the Vilakkannur Eucharistic Miracle happen?"), "acceptedAnswer": { "@type": "Answer", "text": t("home.faq.02.a", "The miraculous event occurred on November 15, 2013, during a morning Holy Mass when the face of Jesus Christ appeared on the sacred host.") } },
-                { "@type": "Question", "name": t("home.faq.03.q", "Is the Vilakkannur miracle recognized by the Vatican?"), "acceptedAnswer": { "@type": "Answer", "text": t("home.faq.03.a", "Yes, after years of rigorous scientific and theological investigation, the Vatican officially recognized the Eucharistic Miracle in 2025.") } },
-                { "@type": "Question", "name": t("home.faq.04.q", "How can I visit Vilakkannur Church?"), "acceptedAnswer": { "@type": "Answer", "text": t("home.faq.04.a", "Vilakkannur is accessible by road from Kannur city and the Kannur International Airport. The church is open daily for pilgrims and visitors.") } }
+                { "@type": "Question", "name": "Where is the Eucharistic Miracle of Vilakkannur located?", "acceptedAnswer": { "@type": "Answer", "text": "The miracle took place at Christ the King Church in Vilakkannur, a village in the Kannur district of Kerala, India." } },
+                { "@type": "Question", "name": "When did the Vilakkannur Eucharistic Miracle happen?", "acceptedAnswer": { "@type": "Answer", "text": "The miraculous event occurred on November 15, 2013, during a morning Holy Mass when the face of Jesus Christ appeared on the sacred host." } },
+                { "@type": "Question", "name": "Is the Vilakkannur miracle recognized by the Vatican?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, after years of rigorous scientific and theological investigation, the Vatican officially recognized the Eucharistic Miracle in 2025." } },
+                { "@type": "Question", "name": "How can I visit Vilakkannur Church?", "acceptedAnswer": { "@type": "Answer", "text": "Vilakkannur is accessible by road from Kannur city and the Kannur International Airport. The church is open daily for pilgrims and visitors." } }
               ]
             })}
           </script>
@@ -400,17 +402,16 @@ export default function Home() {
               {/* Inner glow */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-emerald-500/10 rounded-full blur-[60px] md:blur-[100px] pointer-events-none"></div>
               
-              <h2 
-                className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 md:mb-12 relative z-10 leading-tight"
-                dangerouslySetInnerHTML={{ __html: t("home.cta.title", "Plan Your Spiritual Journey <br class='hidden md:block'/> to Vilakkannur") }}
-              />
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-8 md:mb-12 relative z-10 leading-tight">
+                Plan Your Spiritual Journey <br className='hidden md:block'/> to Vilakkannur
+              </h2>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
                 <Link to="/visit" className="btn-gold text-xl px-12 py-6">
-                  {t("home.cta.primary", "Plan Visit")}
+                  Plan Visit
                 </Link>
                 <Link to="/contact" className="btn-primary text-xl px-12 py-6">
-                  {t("home.cta.secondary", "Contact")}
+                  Contact
                 </Link>
               </div>
             </div>
