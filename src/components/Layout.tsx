@@ -48,17 +48,7 @@ export function Layout() {
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full border border-gold-400 flex items-center justify-center bg-forest-900/5 group-hover:bg-gold-400/10 transition-colors">
-              <span className="text-gold-500 font-serif text-xl">V</span>
-            </div>
-            <div className="flex flex-col">
-              <span className={cn("font-serif text-xl leading-tight transition-colors", isScrolled ? "text-white" : "text-white drop-shadow-md")}>
-                {t("footer.church_name", "Christ the King")}
-              </span>
-              <span className={cn("text-[10px] tracking-[0.2em] uppercase transition-colors", isScrolled ? "text-gold-400" : "text-white/80 drop-shadow-sm")}>
-                {t("footer.location", "Vilakkannur Church")}
-              </span>
-            </div>
+            <img src={isScrolled ? "/logos/logo-light.svg" : "/logos/logo-dark.svg"} alt="Vilakkannur Church" className="h-10 md:h-12 transition-all duration-500" />
           </Link>
 
           {/* Desktop Nav */}
@@ -146,17 +136,7 @@ export function Layout() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full border border-gold-400/30 flex items-center justify-center">
-                  <span className="text-gold-400 font-serif text-xl">V</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-serif text-xl leading-tight text-white">
-                    {t("footer.church_name", "Christ the King Church")}
-                  </span>
-                  <span className="text-[10px] tracking-[0.2em] uppercase text-gold-400/80">
-                    {t("footer.location", "Vilakkannur")}
-                  </span>
-                </div>
+                <img src="/logos/logo-dark.svg" alt="Vilakkannur Church" className="h-12" />
               </div>
               <p className="text-warm-50/60 text-sm leading-relaxed max-w-md">
                 {t("footer.description", "A sanctuary of peace and a site of the miraculous Eucharistic event. We welcome pilgrims and visitors from around the world to experience the divine presence in the heart of Kerala.")}

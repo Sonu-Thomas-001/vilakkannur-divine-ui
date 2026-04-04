@@ -1,0 +1,28 @@
+<svg width="600" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE08B" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#997A15" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Icon Group -->
+  <g transform="translate(10, 10) scale(0.273)">
+    <circle cx="256" cy="256" r="200" fill="none" stroke="url(#goldGrad)" stroke-width="4" opacity="0.3"/>
+    <circle cx="256" cy="256" r="160" fill="none" stroke="url(#goldGrad)" stroke-width="16" opacity="0.85"/>
+    <path d="M 256 30 C 256 230, 230 256, 30 256 C 230 256, 256 282, 256 482 C 256 282, 282 256, 482 256 C 282 256, 256 230, 256 30 Z" fill="url(#goldGrad)" filter="url(#glow)"/>
+    <circle cx="256" cy="256" r="36" fill="#FFFFFF" opacity="0.95" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Wordmark Group -->
+  <!-- Main Title: Light, elegant sans-serif -->
+  <text x="170" y="90" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" font-weight="300" fill="#FFFFFF" letter-spacing="8">VILAKKANNUR</text>
+  
+  <!-- Subtitle: Bold, wide-tracked gold text -->
+  <text x="175" y="125" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#D4AF37" letter-spacing="16">CHURCH</text>
+</svg>
