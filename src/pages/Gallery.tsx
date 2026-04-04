@@ -8,58 +8,156 @@ const categories = ["All", "Church", "Events", "Miracle", "Pilgrimage"];
 const images = [
   {
     id: 1,
-    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church-photo.jpg",
-    titleKey: "gallery.images.church_interior",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg",
+    titleKey: "gallery.images.church_exterior",
     category: "Church",
     span: "md:col-span-2 md:row-span-2"
   },
   {
     id: 2,
-    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2013.jpg",
-    titleKey: "gallery.images.architecture",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church-photo.jpg",
+    titleKey: "gallery.images.church_view",
     category: "Church",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 3,
-    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2010.jpg",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor.webp",
+    titleKey: "gallery.images.eucharistic_miracle",
+    category: "Miracle",
+    span: "md:col-span-2 md:row-span-1"
+  },
+  {
+    id: 4,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor-2.webp",
+    titleKey: "gallery.images.divine_face",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-2"
+  },
+  {
+    id: 5,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannur.avif",
+    titleKey: "gallery.images.holy_sacrament",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 6,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%201.jpg",
+    titleKey: "gallery.images.miracle_close_up",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 7,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%202.jfif",
+    titleKey: "gallery.images.divine_sign",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 8,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%204.jfif",
+    titleKey: "gallery.images.sacred_host",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 9,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%205.jfif",
+    titleKey: "gallery.images.miraculous_event",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 10,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%206.jfif",
     titleKey: "gallery.images.holy_mass",
     category: "Events",
     span: "md:col-span-1 md:row-span-1"
   },
   {
-    id: 4,
-    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor.webp",
-    titleKey: "gallery.images.divine_light",
-    category: "Miracle",
-    span: "md:col-span-2 md:row-span-1"
-  },
-  {
-    id: 5,
-    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle-5.webp",
-    titleKey: "gallery.images.historical_view",
-    category: "Church",
-    span: "md:col-span-1 md:row-span-2"
-  },
-  {
-    id: 6,
-    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%201.jpg",
-    titleKey: "gallery.images.sanctuary",
-    category: "Church",
+    id: 11,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%207.jfif",
+    titleKey: "gallery.images.congregation",
+    category: "Events",
     span: "md:col-span-1 md:row-span-1"
   },
   {
-    id: 7,
-    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle-2.webp",
-    titleKey: "gallery.images.pilgrimage_journey",
+    id: 12,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%208.jfif",
+    titleKey: "gallery.images.faithful_gathering",
     category: "Pilgrimage",
     span: "md:col-span-1 md:row-span-1"
   },
   {
-    id: 8,
-    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannur.avif",
-    titleKey: "gallery.images.altar_details",
+    id: 13,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%209.jfif",
+    titleKey: "gallery.images.prayer",
+    category: "Pilgrimage",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 14,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2010.jpg",
+    titleKey: "gallery.images.church_altar",
     category: "Church",
+    span: "md:col-span-2 md:row-span-1"
+  },
+  {
+    id: 15,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2011.jfif",
+    titleKey: "gallery.images.devotion",
+    category: "Events",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 16,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2012.jfif",
+    titleKey: "gallery.images.sacred_moment",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 17,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2013.jpg",
+    titleKey: "gallery.images.pilgrims",
+    category: "Pilgrimage",
+    span: "md:col-span-2 md:row-span-2"
+  },
+  {
+    id: 18,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle-1.jfif",
+    titleKey: "gallery.images.divine_presence",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 19,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle.webp",
+    titleKey: "gallery.images.eucharistic_sign",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-2"
+  },
+  {
+    id: 20,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle-2.webp",
+    titleKey: "gallery.images.holy_face",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 21,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle-3.webp",
+    titleKey: "gallery.images.miracle_display",
+    category: "Miracle",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 22,
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle-5.webp",
+    titleKey: "gallery.images.sacred_relic",
+    category: "Miracle",
     span: "md:col-span-2 md:row-span-1"
   }
 ];
