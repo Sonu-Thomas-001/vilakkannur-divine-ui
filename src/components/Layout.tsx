@@ -4,8 +4,11 @@ import { Menu, X, MapPin, Phone, Mail, ChevronRight, Clock, Car, Instagram, Yout
 import { useState, useEffect, useRef } from "react";
 import { cn } from "../lib/utils";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
+import { ScrollToTop } from "./ScrollToTop";
 import { useTranslation } from "react-i18next";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { useTheme } from "../context/ThemeContext";
 
 export function Layout() {
   const { t } = useTranslation();
@@ -14,6 +17,7 @@ export function Layout() {
   const location = useLocation();
   const isMobile = useIsMobile();
   const footerRef = useRef<HTMLElement>(null);
+  const { theme } = useTheme();
   
   const { scrollYProgress } = useScroll({
     target: footerRef,
@@ -61,7 +65,7 @@ export function Layout() {
             : "max-w-7xl bg-transparent border-transparent px-6 py-2"
         )}>
           <Link to="/" className="flex items-center gap-3 group">
-            <img src="/logos/logo-dark.svg" alt="Vilakkannur Church" className={cn("transition-all duration-500", isScrolled ? "h-8 md:h-10" : "h-10 md:h-12")} />
+            <img src={theme === 'light' ? "/logos/logo-light.svg" : "/logos/logo-dark.svg"} alt="Vilakkannur Church" className={cn("transition-all duration-500", isScrolled ? "h-8 md:h-10" : "h-10 md:h-12")} />
           </Link>
 
           {/* Desktop Nav */}
@@ -88,6 +92,7 @@ export function Layout() {
 
           {/* Right Actions */}
           <div className="hidden lg:flex items-center gap-4">
+            <ThemeToggle />
             <LanguageSwitcher isScrolled={isScrolled} />
             <Link 
               to="/visit" 
@@ -99,6 +104,7 @@ export function Layout() {
 
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden flex items-center gap-4">
+            <ThemeToggle />
             <LanguageSwitcher isScrolled={isScrolled} />
             <button
               className="p-2 rounded-full hover:bg-white/10 transition-colors"
@@ -353,6 +359,8 @@ export function Layout() {
           </div>
         </div>
       </footer>
+
+      <ScrollToTop />
     </div>
   );
 }

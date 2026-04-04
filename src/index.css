@@ -35,8 +35,19 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-deep-black text-warm-100 font-sans antialiased selection:bg-gold-500/30 selection:text-gold-300 overflow-x-hidden;
+    @apply bg-deep-black text-warm-100 font-sans antialiased selection:bg-gold-500/30 selection:text-gold-300 overflow-x-hidden transition-colors duration-500;
   }
+  
+  body.light-mode {
+    --color-deep-black: #FDFBF7;
+    --color-ink: #F5F2EB;
+    --color-warm-50: #111111;
+    --color-warm-100: #222222;
+    --color-warm-200: #333333;
+    --color-white: #050505;
+    --color-black: #FAFAF9;
+  }
+
   /* Fluid Typography */
   h1 {
     font-size: clamp(2.5rem, 8vw, 5.5rem);
