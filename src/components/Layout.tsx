@@ -40,75 +40,121 @@ export function Layout() {
       {/* Navigation */}
       <header
         className={cn(
-          "fixed top-0 w-full z-50 transition-all duration-500",
-          isScrolled
-            ? "glass-dark py-3"
-            : "bg-transparent py-6"
+          "fixed top-0 w-full z-50 transition-all duration-500 flex justify-center px-4",
+          isScrolled ? "pt-4" : "pt-6"
         )}
       >
-        <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+        <div className={cn(
+          "flex justify-between items-center transition-all duration-500 w-full",
+          isScrolled 
+            ? "max-w-6xl bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5),0_0_15px_rgba(234,179,8,0.05)] rounded-full px-6 py-3" 
+            : "max-w-7xl bg-transparent border-transparent px-6 py-2"
+        )}>
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={isScrolled ? "/logos/logo-light.svg" : "/logos/logo-dark.svg"} alt="Vilakkannur Church" className="h-10 md:h-12 transition-all duration-500" />
+            <img src={isScrolled ? "/logos/logo-light.svg" : "/logos/logo-dark.svg"} alt="Vilakkannur Church" className={cn("transition-all duration-500", isScrolled ? "h-8 md:h-10" : "h-10 md:h-12")} />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
                 className={cn(
-                  "text-sm font-medium tracking-wide transition-all hover:text-gold-500",
+                  "relative text-sm font-medium tracking-wide transition-all duration-300 group py-2",
                   location.pathname === link.path
                     ? "text-gold-400"
                     : isScrolled ? "text-white/80 hover:text-white" : "text-white/90 drop-shadow-sm hover:text-white"
                 )}
               >
                 {link.name}
+                <span className={cn(
+                  "absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-emerald-400 to-gold-400 transform origin-left transition-transform duration-300",
+                  location.pathname === link.path ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                )} />
               </Link>
             ))}
-            <LanguageSwitcher isScrolled={isScrolled} />
           </nav>
 
+          {/* Right Actions */}
+          <div className="hidden lg:flex items-center gap-4">
+            <LanguageSwitcher isScrolled={isScrolled} />
+            <Link 
+              to="/visit" 
+              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-gold-500 text-white font-medium text-sm tracking-wide transition-all duration-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] hover:-translate-y-0.5 hover:scale-105"
+            >
+              Plan Visit
+            </Link>
+          </div>
+
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-4">
             <LanguageSwitcher isScrolled={isScrolled} />
             <button
-              className="p-2"
+              className="p-2 rounded-full hover:bg-white/10 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? (
-                <X className={cn("w-6 h-6", isScrolled ? "text-white" : "text-white")} />
-              ) : (
-                <Menu className={cn("w-6 h-6", isScrolled ? "text-white" : "text-white")} />
-              )}
+              <Menu className={cn("w-6 h-6", isScrolled ? "text-white" : "text-white")} />
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 glass-dark pt-24 px-6 flex flex-col"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-3xl flex flex-col"
           >
-            <nav className="flex flex-col gap-6 text-center">
-              {navLinks.map((link) => (
-                <Link
+            <div className="flex justify-between items-center p-6 md:p-8">
+              <img src="/logos/logo-light.svg" alt="Vilakkannur Church" className="h-10" />
+              <button
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <nav className="flex-1 flex flex-col justify-center items-center gap-8 px-6">
+              {navLinks.map((link, i) => (
+                <motion.div
                   key={link.name}
-                  to={link.path}
-                  className={cn(
-                    "text-2xl font-serif transition-colors",
-                    location.pathname === link.path ? "text-gold-400" : "text-white/80 hover:text-white"
-                  )}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: i * 0.1, duration: 0.4 }}
                 >
-                  {link.name}
-                </Link>
+                  <Link
+                    to={link.path}
+                    className={cn(
+                      "text-3xl md:text-4xl font-serif transition-colors",
+                      location.pathname === link.path ? "text-gold-400" : "text-white hover:text-gold-300"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: navLinks.length * 0.1, duration: 0.4 }}
+                className="mt-8"
+              >
+                <Link 
+                  to="/visit" 
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-emerald-600 to-gold-500 text-white font-medium text-lg tracking-wide transition-all duration-500 shadow-[0_0_20px_rgba(234,179,8,0.2)]"
+                >
+                  Plan Visit
+                </Link>
+              </motion.div>
             </nav>
           </motion.div>
         )}

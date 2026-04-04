@@ -29,10 +29,10 @@ export default function About() {
         >
           <span className="text-emerald-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("about.hero.badge", "Our Heritage")}</span>
           <h1 className="text-white mb-6 md:mb-10 tracking-tight">
-            <span dangerouslySetInnerHTML={{ __html: t("about.hero.title", "Christ the King <br/><span class='text-gradient-emerald italic pr-4'>Church</span>") }} />
+            <span dangerouslySetInnerHTML={{ __html: t("about.hero.title", "Christ the King <br/><span class='text-gradient-emerald italic pr-4'>Church, Vilakkannur</span>") }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
-            {t("about.hero.subtitle", "A sanctuary of faith nestled in the hills of Kerala, where history and divine grace intertwine.")}
+            {t("about.hero.subtitle", "A sanctuary of faith nestled in the hills of Kerala, where history and divine grace intertwine to form a global pilgrimage destination.")}
           </p>
         </motion.div>
       </section>
@@ -169,7 +169,7 @@ export default function About() {
               </div>
               <h3 className="text-2xl md:text-3xl font-serif text-white mb-4 md:mb-6">{t("about.growth.community.title", "Community Growth")}</h3>
               <p className="text-warm-200/60 text-base md:text-lg leading-relaxed font-light">
-                {t("about.growth.community.desc", "Following the Eucharistic Miracle of 2013 and its subsequent Vatican recognition in 2025, the church experienced unprecedented growth. The local community expanded its mission to welcome, house, and guide the massive influx of pilgrims, transforming the village economy and social fabric while maintaining its spiritual core.")}
+                Following the <a href="/miracle" className="text-gold-400 hover:text-gold-300 underline decoration-gold-400/30 underline-offset-4 transition-colors">Eucharistic Miracle of 2013</a> and its subsequent Vatican recognition in 2025, the church experienced unprecedented growth. The local community expanded its mission to welcome, house, and guide the massive influx of pilgrims, transforming the village economy and social fabric while maintaining its spiritual core.
               </p>
             </motion.div>
 
@@ -189,6 +189,28 @@ export default function About() {
               </p>
             </motion.div>
           </div>
+
+          {/* CTA Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="mt-24 md:mt-32 text-center"
+          >
+            <h2 className="text-3xl md:text-5xl font-serif text-white mb-8">
+              Join Our <span className="text-gradient-emerald italic">Community</span>
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <a href="/contact" className="btn-primary text-lg px-10 py-4">
+                Contact the Parish
+              </a>
+              <a href="/visit" className="btn-gold text-lg px-10 py-4">
+                Plan Your Visit
+              </a>
+            </div>
+          </motion.div>
+
         </div>
       </section>
     </div>

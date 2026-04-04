@@ -53,10 +53,26 @@ export default function Visit() {
             <span dangerouslySetInnerHTML={{ __html: t("visit.hero.title", "Visit <span class='text-gradient-gold italic pr-4'>Vilakkannur</span>") }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
-            {t("visit.hero.subtitle", "Essential information for pilgrims and travelers seeking to experience the sanctuary.")}
+            {t("visit.hero.subtitle", "Essential information for pilgrims and travelers seeking to experience the sanctuary and spiritual tourism in Kerala.")}
           </p>
         </motion.div>
       </section>
+
+      {/* FAQ Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        })}
+      </script>
 
       {/* Main Content Grid */}
       <section className="section-padding relative z-10">

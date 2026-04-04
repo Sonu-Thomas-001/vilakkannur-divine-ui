@@ -195,10 +195,10 @@ export default function Gallery() {
         >
           <span className="text-emerald-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("gallery.hero.badge", "Visual Journey")}</span>
           <h1 className="text-white mb-6 md:mb-10 tracking-tight">
-            <span dangerouslySetInnerHTML={{ __html: t("gallery.hero.title", "<span class='text-gradient-emerald italic pr-4'>Gallery</span>") }} />
+            <span dangerouslySetInnerHTML={{ __html: t("gallery.hero.title", "Vilakkannur Church <br /><span class='text-gradient-emerald italic pr-4'>Gallery</span>") }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
-            {t("gallery.hero.subtitle", "Glimpses of our sacred space, spiritual events, and the serene surroundings.")}
+            {t("gallery.hero.subtitle", "Explore the visual history of Christ the King Church, the Eucharistic Miracle, and the vibrant pilgrimage community in Kerala.")}
           </p>
         </motion.div>
       </section>

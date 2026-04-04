@@ -46,10 +46,10 @@ export function LanguageSwitcher({ isScrolled }: { isScrolled: boolean }) {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300",
+          "flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300",
           isScrolled 
-            ? "border-white/10 hover:bg-white/5 text-white/80 hover:text-white" 
-            : "border-white/20 hover:bg-white/10 text-white drop-shadow-sm"
+            ? "bg-white/5 border border-white/10 hover:bg-white/10 text-white" 
+            : "bg-black/20 backdrop-blur-md border border-white/20 hover:bg-black/40 text-white"
         )}
       >
         <Globe className="w-4 h-4" />
@@ -63,7 +63,7 @@ export function LanguageSwitcher({ isScrolled }: { isScrolled: boolean }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 mt-2 w-32 glass-dark rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-50"
+            className="absolute right-0 mt-3 w-36 bg-black/80 backdrop-blur-2xl rounded-2xl overflow-hidden border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] z-50"
           >
             <div className="flex flex-col py-2">
               {languages.map((lang) => (
@@ -71,12 +71,12 @@ export function LanguageSwitcher({ isScrolled }: { isScrolled: boolean }) {
                   key={lang.code}
                   onClick={() => changeLanguage(lang.code)}
                   className={cn(
-                    "px-4 py-2 text-sm text-left transition-colors hover:bg-white/5",
-                    i18n.language?.startsWith(lang.code) ? "text-gold-400 font-medium" : "text-white/70 hover:text-white"
+                    "px-4 py-2.5 text-sm text-left transition-colors hover:bg-white/10",
+                    i18n.language?.startsWith(lang.code) ? "text-gold-400 bg-white/5" : "text-white/80 hover:text-white"
                   )}
                 >
                   <span className="block text-xs font-medium mb-0.5">{lang.label}</span>
-                  <span className="block text-[10px] opacity-70">{lang.name}</span>
+                  <span className="block text-[10px] opacity-60">{lang.name}</span>
                 </button>
               ))}
             </div>

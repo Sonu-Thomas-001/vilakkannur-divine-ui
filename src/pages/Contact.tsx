@@ -29,10 +29,10 @@ export default function Contact() {
         >
           <span className="text-gold-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("contact.hero.badge", "Get in Touch")}</span>
           <h1 className="text-white mb-6 md:mb-10 tracking-tight">
-            <span dangerouslySetInnerHTML={{ __html: t("contact.hero.title", "Contact <span class='text-gradient-gold italic pr-4'>Us</span>") }} />
+            <span dangerouslySetInnerHTML={{ __html: t("contact.hero.title", "Contact <span class='text-gradient-gold italic pr-4'>Vilakkannur Church</span>") }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
-            {t("contact.hero.subtitle", "We welcome your inquiries, prayer requests, and messages.")}
+            {t("contact.hero.subtitle", "We welcome your inquiries, prayer requests, and messages regarding the Eucharistic Miracle and pilgrimage.")}
           </p>
         </motion.div>
       </section>

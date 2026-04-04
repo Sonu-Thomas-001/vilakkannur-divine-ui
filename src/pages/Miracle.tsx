@@ -79,10 +79,10 @@ export default function Miracle() {
         >
           <span className="text-gold-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("miracle.hero.badge", "The Divine Sign")}</span>
           <h1 className="text-white mb-6 md:mb-10 tracking-tight">
-            <span dangerouslySetInnerHTML={{ __html: t("miracle.hero.title", "The Eucharistic <br/><span class='text-gradient-gold italic pr-4'>Miracle</span>") }} />
+            <span dangerouslySetInnerHTML={{ __html: t("miracle.hero.title", "The Eucharistic <br/><span class='text-gradient-gold italic pr-4'>Miracle in India</span>") }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
-            {t("miracle.hero.subtitle", "A profound manifestation of Christ's real presence that drew the world's eyes to Vilakkannur.")}
+            {t("miracle.hero.subtitle", "A profound manifestation of Christ's real presence that drew the world's eyes to Vilakkannur, making it a center for Catholic miracles in India.")}
           </p>
         </motion.div>
         
@@ -169,6 +169,34 @@ export default function Miracle() {
               </div>
             ))}
           </div>
+
+          {/* CTA Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="mt-32 text-center"
+          >
+            <div className="inline-block p-[1px] rounded-full bg-gradient-to-r from-transparent via-gold-500 to-transparent mb-8">
+              <div className="px-8 py-3 bg-deep-black rounded-full text-gold-400 text-sm tracking-widest uppercase font-medium">
+                The Journey Continues
+              </div>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-8">
+              Experience the Miracle <br className="hidden md:block" />
+              <span className="text-warm-200/60 italic text-3xl md:text-4xl lg:text-5xl">in Person</span>
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <a href="/visit" className="btn-gold text-lg px-10 py-4">
+                Plan Your Pilgrimage
+              </a>
+              <a href="/gallery" className="btn-primary text-lg px-10 py-4">
+                View Gallery
+              </a>
+            </div>
+          </motion.div>
+
         </div>
       </section>
     </div>
