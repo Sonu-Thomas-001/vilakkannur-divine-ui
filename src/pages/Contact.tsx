@@ -11,7 +11,7 @@ export default function Contact() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-deep-black">
           <img
-            src="https://picsum.photos/seed/candles/1920/1080"
+            src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2013.jpg"
             alt="Church Candles"
             className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
             referrerPolicy="no-referrer"

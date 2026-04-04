@@ -8,56 +8,56 @@ const categories = ["All", "Church", "Events", "Miracle", "Pilgrimage"];
 const images = [
   {
     id: 1,
-    url: "https://picsum.photos/seed/church1/800/800",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church-photo.jpg",
     titleKey: "gallery.images.church_interior",
     category: "Church",
     span: "md:col-span-2 md:row-span-2"
   },
   {
     id: 2,
-    url: "https://picsum.photos/seed/church2/800/800",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2013.jpg",
     titleKey: "gallery.images.architecture",
     category: "Church",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 3,
-    url: "https://picsum.photos/seed/events1/800/800",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2010.jpg",
     titleKey: "gallery.images.holy_mass",
     category: "Events",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 4,
-    url: "https://picsum.photos/seed/miracle1/800/800",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor.webp",
     titleKey: "gallery.images.divine_light",
     category: "Miracle",
     span: "md:col-span-2 md:row-span-1"
   },
   {
     id: 5,
-    url: "https://picsum.photos/seed/church3/800/800",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle-5.webp",
     titleKey: "gallery.images.historical_view",
     category: "Church",
     span: "md:col-span-1 md:row-span-2"
   },
   {
     id: 6,
-    url: "https://picsum.photos/seed/church4/800/800",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%201.jpg",
     titleKey: "gallery.images.sanctuary",
     category: "Church",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 7,
-    url: "https://picsum.photos/seed/pilgrimage1/800/800",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle-2.webp",
     titleKey: "gallery.images.pilgrimage_journey",
     category: "Pilgrimage",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 8,
-    url: "https://picsum.photos/seed/church5/800/800",
+    url: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannur.avif",
     titleKey: "gallery.images.altar_details",
     category: "Church",
     span: "md:col-span-2 md:row-span-1"
@@ -79,7 +79,7 @@ export default function Gallery() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-deep-black">
           <img
-            src="https://picsum.photos/seed/churchinterior/1920/1080"
+            src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg"
             alt="Church Interior"
             className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
             referrerPolicy="no-referrer"

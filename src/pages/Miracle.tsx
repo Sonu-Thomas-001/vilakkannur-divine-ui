@@ -18,7 +18,7 @@ export default function Miracle() {
       title: t("miracle.timeline.01.title", "The Moment"),
       subtitle: t("miracle.timeline.01.subtitle", "November 15, 2013"),
       description: t("miracle.timeline.01.desc", "A quiet morning Mass. As the priest elevated the host, an extraordinary light emerged, altering the course of a small parish forever."),
-      image: "https://picsum.photos/seed/moment/800/1000",
+      image: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%201.jpg",
       align: "left"
     },
     {
@@ -26,7 +26,7 @@ export default function Miracle() {
       title: t("miracle.timeline.02.title", "The Appearance"),
       subtitle: t("miracle.timeline.02.subtitle", "The Face of Christ"),
       description: t("miracle.timeline.02.desc", "The distinct face of Jesus Christ, crowned with thorns, formed on the consecrated bread. A congregation was left in absolute awe and silence."),
-      image: "https://picsum.photos/seed/appearance/800/1000",
+      image: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor-2.webp",
       align: "right"
     },
     {
@@ -34,7 +34,7 @@ export default function Miracle() {
       title: t("miracle.timeline.03.title", "The Investigation"),
       subtitle: t("miracle.timeline.03.subtitle", "Science & Theology"),
       description: t("miracle.timeline.03.desc", "Years of rigorous scrutiny. Independent laboratories and the Vatican's careful examination of the inexplicable, confirming the absence of artificial pigments."),
-      image: "https://picsum.photos/seed/investigation/800/1000",
+      image: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle.webp",
       align: "left"
     },
     {
@@ -42,7 +42,7 @@ export default function Miracle() {
       title: t("miracle.timeline.04.title", "The Recognition"),
       subtitle: t("miracle.timeline.04.subtitle", "Vatican Approval, 2025"),
       description: t("miracle.timeline.04.desc", "Officially recognized as a true Eucharistic Miracle. A profound gift to the universal Church and a testament to divine presence in the modern age."),
-      image: "https://picsum.photos/seed/recognition/800/1000",
+      image: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle-2.webp",
       align: "right"
     },
     {
@@ -50,7 +50,7 @@ export default function Miracle() {
       title: t("miracle.timeline.05.title", "The Impact"),
       subtitle: t("miracle.timeline.05.subtitle", "A Global Sanctuary"),
       description: t("miracle.timeline.05.desc", "Thousands journey to Vilakkannur seeking solace, healing, and a deeper connection with the Divine. A quiet village transformed into a beacon of faith."),
-      image: "https://picsum.photos/seed/impact/800/1000",
+      image: "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/vilakkannur-miracle-3.webp",
       align: "left"
     }
   ];
@@ -61,7 +61,7 @@ export default function Miracle() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-deep-black">
           <img
-            src="https://picsum.photos/seed/divinelight/1920/1080"
+            src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor.webp"
             alt="Divine Light"
             className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
             referrerPolicy="no-referrer"

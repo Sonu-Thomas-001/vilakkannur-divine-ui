@@ -11,7 +11,7 @@ export default function About() {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-deep-black">
           <img
-            src="https://picsum.photos/seed/heritage/1920/1080"
+            src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg"
             alt="Church Exterior"
             className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
             referrerPolicy="no-referrer"
@@ -74,7 +74,7 @@ export default function About() {
               className="relative aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(234,179,8,0.15)] border border-white/10 group"
             >
               <img
-                src="https://picsum.photos/seed/history/800/800"
+                src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church-photo.jpg"
                 loading="lazy"
                 alt="Historical Church Architecture"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 opacity-80"
@@ -124,7 +124,7 @@ export default function About() {
               className="relative aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,95,70,0.2)] border border-white/10 group lg:order-1"
             >
               <img
-                src="https://picsum.photos/seed/kerala/800/800"
+                src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2013.jpg"
                 loading="lazy"
                 alt="Kerala Landscape"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 opacity-80"

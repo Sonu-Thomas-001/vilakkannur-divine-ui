@@ -17,7 +17,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0 bg-deep-black overflow-hidden">
           <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
             <img
-              src="https://picsum.photos/seed/churchdark/1920/1080"
+              src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg"
               alt="Church at Sunrise"
               className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
               referrerPolicy="no-referrer"
@@ -180,7 +180,7 @@ export default function Home() {
               className="md:col-span-8 md:row-span-2 relative rounded-3xl overflow-hidden group shadow-2xl"
             >
               <Link to="/miracle" className="block w-full h-full">
-                <img src="https://picsum.photos/seed/miraclegrid/1200/800" loading="lazy" alt="The Miracle" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor.webp" loading="lazy" alt="The Miracle" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
                 <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 z-10">
                   <span className="text-gold-400 font-serif italic text-lg md:text-xl mb-2 md:mb-3 block">{t("home.grid.miracle.subtitle", "The Divine Sign")}</span>
@@ -199,7 +199,7 @@ export default function Home() {
               className="md:col-span-4 md:row-span-2 relative rounded-3xl overflow-hidden group shadow-2xl"
             >
               <Link to="/about" className="block w-full h-full">
-                <img src="https://picsum.photos/seed/spiritual/600/800" loading="lazy" alt="Spiritual Experience" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2013.jpg" loading="lazy" alt="Spiritual Experience" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
                 <div className="absolute bottom-6 left-6 md:bottom-12 md:left-10 z-10">
                   <h3 className="text-2xl md:text-4xl font-serif text-white mb-2 md:mb-4">{t("home.grid.spiritual.title", "Spiritual Experience")}</h3>
@@ -217,7 +217,7 @@ export default function Home() {
               className="md:col-span-6 md:row-span-1 relative rounded-3xl overflow-hidden group shadow-2xl"
             >
               <Link to="/visit" className="block w-full h-full">
-                <img src="https://picsum.photos/seed/visitinfo/800/400" loading="lazy" alt="Visit Info" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church-photo.jpg" loading="lazy" alt="Visit Info" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
                 <div className="absolute bottom-10 left-10 z-10">
                   <h3 className="text-3xl font-serif text-white mb-2">{t("home.grid.visit.title", "Plan Your Visit")}</h3>
@@ -235,7 +235,7 @@ export default function Home() {
               className="md:col-span-6 md:row-span-1 relative rounded-3xl overflow-hidden group shadow-2xl"
             >
               <Link to="/gallery" className="block w-full h-full">
-                <img src="https://picsum.photos/seed/gallerygrid/800/400" loading="lazy" alt="Gallery" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2010.jpg" loading="lazy" alt="Gallery" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
                 <div className="absolute bottom-10 left-10 z-10">
                   <h3 className="text-3xl font-serif text-white mb-2">{t("home.grid.gallery.title", "Visual Gallery")}</h3>
@@ -252,7 +252,7 @@ export default function Home() {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%] -top-[10%] z-0">
           <img
-            src="https://picsum.photos/seed/churchparallax/1920/1080"
+            src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church-photo.jpg"
             loading="lazy"
             alt="Church Parallax"
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
