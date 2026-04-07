@@ -6,6 +6,7 @@ import { cn } from "../lib/utils";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
 import { ScrollToTop } from "./ScrollToTop";
+import BookingPopup from "./BookingPopup";
 import { useTranslation } from "react-i18next";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { useTheme } from "../context/ThemeContext";
@@ -461,6 +462,7 @@ export function Layout() {
       </footer>
 
       <ScrollToTop />
+      <BookingPopup />
     </div>
   );
 }
