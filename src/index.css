@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Serif+Malayalam:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -7,34 +7,29 @@
   --font-ml: "Noto Sans Malayalam", "Inter", sans-serif;
   --font-hi: "Noto Sans Devanagari", "Inter", sans-serif;
   --font-ta: "Noto Sans Tamil", "Inter", sans-serif;
-  --font-ml-serif: "Noto Serif Malayalam", "Playfair Display", serif;
-  --font-hi-serif: "Noto Serif Devanagari", "Playfair Display", serif;
-  --font-ta-serif: "Noto Serif Tamil", "Playfair Display", serif;
 
-  --color-gold-200: var(--color-gold-200, #EAD08C);
-  --color-gold-300: var(--color-gold-300, #E0C062);
-  --color-gold-400: var(--color-gold-400, #D4AF37);
-  --color-gold-500: var(--color-gold-500, #B8962D);
-  --color-gold-600: var(--color-gold-600, #9C7E24);
+  /* Gold Palette - Refined for better visibility */
+  --color-gold-50: #FFF9E6;
+  --color-gold-100: #FDF2D0;
+  --color-gold-200: #FBE6A1;
+  --color-gold-300: #F8D972;
+  --color-gold-400: #F5CD43;
+  --color-gold-500: #D4AF37; /* Primary Gold */
+  --color-gold-600: #B8962D;
+  --color-gold-700: #9C7E24;
+  --color-gold-800: #80661B;
+  --color-gold-900: #644E12;
 
-  --color-emerald-400: var(--color-emerald-400, #34d399);
-  --color-emerald-500: var(--color-emerald-500, #10b981);
-  --color-emerald-600: var(--color-emerald-600, #059669);
   --color-emerald-800: #14523E;
   --color-emerald-900: #0F3D2E;
   --color-emerald-950: #0A291F;
 
-  --color-warm-50: var(--color-warm-50, #FAFAF9);
-  --color-warm-100: var(--color-warm-100, #F5F5F4);
-  --color-warm-200: var(--color-warm-200, #E7E5E4);
-  
-  --color-white: var(--color-white, #ffffff);
-  --color-black: var(--color-black, #000000);
-  --color-deep-black: var(--color-deep-black, #0B0B0B);
-  --color-ink: var(--color-ink, #050505);
+  --color-deep-black: #0B0B0B;
+  --color-ink: #050505;
 
-  --color-true-white: #ffffff;
-  --color-true-black: #000000;
+  --color-warm-50: #FAFAF9;
+  --color-warm-100: #F5F5F4;
+  --color-warm-200: #E7E5E4;
 
   --spacing-section-mobile: 2.5rem; /* 40px */
   --spacing-section-tablet: 3.75rem; /* 60px */
@@ -43,20 +38,12 @@
 
 @layer base {
   :root {
-    --color-deep-black: #0B0B0B;
-    --color-ink: #050505;
-    --color-warm-50: #FAFAF9;
-    --color-warm-100: #F5F5F4;
-    --color-warm-200: #E7E5E4;
-    --color-white: #ffffff;
-    --color-black: #000000;
-
     --shadow-glass: 0 8px 32px 0 rgba(0,0,0,0.5);
     --shadow-glass-dark: 0 8px 32px 0 rgba(0,0,0,0.8);
     --shadow-btn-primary-hover: 0 0 25px rgba(255,255,255,0.15);
-    --shadow-btn-gold-hover: 0 0 35px rgba(234,179,8,0.25);
+    --shadow-btn-gold-hover: 0 0 35px rgba(212,175,55,0.3);
     --shadow-card-hover: 0 20px 40px -10px rgba(255,255,255,0.05);
-    --shadow-header: 0 8px 32px 0 rgba(0,0,0,0.5), 0 0 15px rgba(234,179,8,0.05);
+    --shadow-header: 0 8px 32px 0 rgba(0,0,0,0.5), 0 0 15px rgba(212,175,55,0.1);
   }
 
   html {
@@ -75,26 +62,21 @@
     --color-white: #050505;
     --color-black: #FAFAF9;
 
-    /* Improve contrast for accent colors in light mode */
-    --color-gold-200: #B8962D;
-    --color-gold-300: #9C7E24;
-    --color-gold-400: #85691C;
-    --color-gold-500: #6B5415;
-    --color-gold-600: #524010;
-    
-    --color-emerald-400: #059669;
-    --color-emerald-500: #047857;
-    --color-emerald-600: #065f46;
-    --color-emerald-800: #d1fae5; /* emerald-100 */
-    --color-emerald-900: #a7f3d0; /* emerald-200 */
-    --color-emerald-950: #6ee7b7; /* emerald-300 */
+    /* Stronger gold for light mode to ensure visibility */
+    --color-gold-50: #644E12;
+    --color-gold-100: #80661B;
+    --color-gold-200: #9C7E24;
+    --color-gold-300: #B8962D;
+    --color-gold-400: #D4AF37;
+    --color-gold-500: #A6851E; 
+    --color-gold-600: #8C6F19;
 
     --shadow-glass: 0 8px 32px 0 rgba(0,0,0,0.05);
     --shadow-glass-dark: 0 8px 32px 0 rgba(0,0,0,0.1);
     --shadow-btn-primary-hover: 0 0 25px rgba(0,0,0,0.15);
-    --shadow-btn-gold-hover: 0 0 35px rgba(234,179,8,0.15);
+    --shadow-btn-gold-hover: 0 0 35px rgba(166,133,30,0.2);
     --shadow-card-hover: 0 20px 40px -10px rgba(0,0,0,0.1);
-    --shadow-header: 0 8px 32px 0 rgba(0,0,0,0.05), 0 0 15px rgba(234,179,8,0.1);
+    --shadow-header: 0 8px 32px 0 rgba(0,0,0,0.05), 0 0 15px rgba(166,133,30,0.1);
   }
 
   body.light-mode .glow-emerald,
@@ -141,14 +123,10 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
   }
-  body.lang-ml h1, body.lang-ml h2, body.lang-ml h3, body.lang-ml h4, body.lang-ml h5, body.lang-ml h6, body.lang-ml .font-serif {
-    font-family: var(--font-ml-serif) !important;
-  }
-  body.lang-hi h1, body.lang-hi h2, body.lang-hi h3, body.lang-hi h4, body.lang-hi h5, body.lang-hi h6, body.lang-hi .font-serif {
-    font-family: var(--font-hi-serif) !important;
-  }
-  body.lang-ta h1, body.lang-ta h2, body.lang-ta h3, body.lang-ta h4, body.lang-ta h5, body.lang-ta h6, body.lang-ta .font-serif {
-    font-family: var(--font-ta-serif) !important;
+  body.lang-ml h1, body.lang-ml h2, body.lang-ml h3, body.lang-ml h4, body.lang-ml h5, body.lang-ml h6,
+  body.lang-hi h1, body.lang-hi h2, body.lang-hi h3, body.lang-hi h4, body.lang-hi h5, body.lang-hi h6,
+  body.lang-ta h1, body.lang-ta h2, body.lang-ta h3, body.lang-ta h4, body.lang-ta h5, body.lang-ta h6 {
+    font-family: inherit;
   }
 }
 
@@ -223,27 +201,5 @@
       padding-left: 4rem;
       padding-right: 4rem;
     }
-  }
-
-  /* Language Specific Fonts */
-  body.lang-ml {
-    font-family: var(--font-ml);
-  }
-  body.lang-ml h1, body.lang-ml h2, body.lang-ml h3, body.lang-ml h4, body.lang-ml h5, body.lang-ml h6, body.lang-ml .font-serif {
-    font-family: var(--font-ml-serif);
-  }
-
-  body.lang-hi {
-    font-family: var(--font-hi);
-  }
-  body.lang-hi h1, body.lang-hi h2, body.lang-hi h3, body.lang-hi h4, body.lang-hi h5, body.lang-hi h6, body.lang-hi .font-serif {
-    font-family: var(--font-hi-serif);
-  }
-
-  body.lang-ta {
-    font-family: var(--font-ta);
-  }
-  body.lang-ta h1, body.lang-ta h2, body.lang-ta h3, body.lang-ta h4, body.lang-ta h5, body.lang-ta h6, body.lang-ta .font-serif {
-    font-family: var(--font-ta-serif);
   }
 }
