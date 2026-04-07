@@ -94,7 +94,7 @@ export default function Home() {
             transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
             className="text-white mb-6 md:mb-8 max-w-6xl tracking-tight"
           >
-            Vilakkannur Church <br /><span className='text-gradient-gold italic pr-4'>Eucharistic Miracle</span>
+            Christ King Church Vilakkannur <br /><span className='text-gradient-gold italic pr-4'>Eucharistic Miracle</span>
           </motion.h1>
 
           <motion.p
@@ -152,7 +152,7 @@ export default function Home() {
                 <img
                   src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church-photo.jpg"
                   loading="lazy"
-                  alt="Vilakkannur Church"
+                  alt="Christ King Church Vilakkannur"
                   className="w-full h-full object-cover opacity-80"
                   referrerPolicy="no-referrer"
                 />
@@ -349,7 +349,7 @@ export default function Home() {
               { q: "Where is the Eucharistic Miracle of Vilakkannur located?", a: "The miracle took place at Christ the King Church in Vilakkannur, a village in the Kannur district of Kerala, India." },
               { q: "When did the Vilakkannur Eucharistic Miracle happen?", a: "The miraculous event occurred on November 15, 2013, during a morning Holy Mass when the face of Jesus Christ appeared on the sacred host." },
               { q: "Is the Vilakkannur miracle recognized by the Vatican?", a: "Yes, after years of rigorous scientific and theological investigation, the Vatican officially recognized the Eucharistic Miracle in 2025." },
-              { q: "How can I visit Vilakkannur Church?", a: "Vilakkannur is accessible by road from Kannur city and the Kannur International Airport. The church is open daily for pilgrims and visitors." }
+              { q: "How can I visit Christ King Church Vilakkannur?", a: "Vilakkannur is accessible by road from Kannur city and the Kannur International Airport. The church is open daily for pilgrims and visitors." }
             ].map((faq, index) => (
               <div key={index} className="p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
                 <h3 className="text-xl md:text-2xl font-serif text-gold-400 mb-3">{faq.q}</h3>
@@ -367,7 +367,7 @@ export default function Home() {
                 { "@type": "Question", "name": "Where is the Eucharistic Miracle of Vilakkannur located?", "acceptedAnswer": { "@type": "Answer", "text": "The miracle took place at Christ the King Church in Vilakkannur, a village in the Kannur district of Kerala, India." } },
                 { "@type": "Question", "name": "When did the Vilakkannur Eucharistic Miracle happen?", "acceptedAnswer": { "@type": "Answer", "text": "The miraculous event occurred on November 15, 2013, during a morning Holy Mass when the face of Jesus Christ appeared on the sacred host." } },
                 { "@type": "Question", "name": "Is the Vilakkannur miracle recognized by the Vatican?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, after years of rigorous scientific and theological investigation, the Vatican officially recognized the Eucharistic Miracle in 2025." } },
-                { "@type": "Question", "name": "How can I visit Vilakkannur Church?", "acceptedAnswer": { "@type": "Answer", "text": "Vilakkannur is accessible by road from Kannur city and the Kannur International Airport. The church is open daily for pilgrims and visitors." } }
+                { "@type": "Question", "name": "How can I visit Christ King Church Vilakkannur?", "acceptedAnswer": { "@type": "Answer", "text": "Vilakkannur is accessible by road from Kannur city and the Kannur International Airport. The church is open daily for pilgrims and visitors." } }
               ]
             })}
           </script>

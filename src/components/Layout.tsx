@@ -65,7 +65,7 @@ export function Layout() {
             : "max-w-7xl bg-transparent border-transparent px-6 py-2"
         )}>
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={theme === 'light' ? "/logos/logo-light.svg" : "/logos/logo-dark.svg"} alt="Vilakkannur Church" className={cn("transition-all duration-500", isScrolled ? "h-8 md:h-10" : "h-10 md:h-12")} />
+            <img src={theme === 'light' ? "/logos/logo-light.svg" : "/logos/logo-dark.svg"} alt="Christ King Church Vilakkannur" className={cn("transition-all duration-500", isScrolled ? "h-8 md:h-10" : "h-10 md:h-12")} />
           </Link>
 
           {/* Desktop Nav */}
@@ -136,7 +136,7 @@ export function Layout() {
             className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-3xl flex flex-col"
           >
             <div className="flex justify-between items-center p-6 md:p-8">
-              <img src="/logos/logo-dark.svg" alt="Vilakkannur Church" className="h-10" />
+              <img src="/logos/logo-dark.svg" alt="Christ King Church Vilakkannur" className="h-10" />
               <button
                 className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 text-white"
                 style={{
@@ -271,7 +271,7 @@ export function Layout() {
               className="space-y-6"
             >
               <Link to="/" className="inline-block">
-                <img src="/logos/logo-dark.svg" alt="Vilakkannur Church" className="h-12" />
+                <img src="/logos/logo-dark.svg" alt="Christ King Church Vilakkannur" className="h-12" />
               </Link>
               <p className="text-warm-50/60 text-sm leading-relaxed max-w-sm">
                 {t("footer.description", "A sanctuary of peace and a site of the miraculous Eucharistic event. We welcome pilgrims and visitors from around the world to experience the divine presence in the heart of Kerala.")}

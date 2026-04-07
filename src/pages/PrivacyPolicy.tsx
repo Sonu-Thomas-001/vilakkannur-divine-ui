@@ -26,55 +26,55 @@ export default function PrivacyPolicy() {
 
           <div className="space-y-10 text-warm-50/80 leading-relaxed font-light">
             <section className="space-y-4">
-              <h2 className="text-2xl font-serif text-white">1. Introduction</h2>
+              <h2 className="text-2xl font-serif text-white">{t("privacy.s1.title", "1. Introduction")}</h2>
               <p>
-                Welcome to Christ the King Church, Vilakkannur. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights.
+                {t("privacy.s1.p1", "Welcome to Christ the King Church, Vilakkannur. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights.")}
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-serif text-white">2. Data We Collect</h2>
+              <h2 className="text-2xl font-serif text-white">{t("privacy.s2.title", "2. Data We Collect")}</h2>
               <p>
-                We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:
+                {t("privacy.s2.p1", "We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:")}
               </p>
               <ul className="list-disc pl-6 space-y-2 text-warm-50/70">
-                <li><strong>Identity Data:</strong> includes first name, last name, or similar identifier.</li>
-                <li><strong>Contact Data:</strong> includes email address and telephone numbers provided through our contact forms.</li>
-                <li><strong>Technical Data:</strong> includes internet protocol (IP) address, browser type and version, time zone setting and location, and other technology on the devices you use to access this website.</li>
-                <li><strong>Usage Data:</strong> includes information about how you use our website.</li>
+                <li><strong>{t("privacy.s2.l1.title", "Identity Data:")}</strong> {t("privacy.s2.l1.desc", "includes first name, last name, or similar identifier.")}</li>
+                <li><strong>{t("privacy.s2.l2.title", "Contact Data:")}</strong> {t("privacy.s2.l2.desc", "includes email address and telephone numbers provided through our contact forms.")}</li>
+                <li><strong>{t("privacy.s2.l3.title", "Technical Data:")}</strong> {t("privacy.s2.l3.desc", "includes internet protocol (IP) address, browser type and version, time zone setting and location, and other technology on the devices you use to access this website.")}</li>
+                <li><strong>{t("privacy.s2.l4.title", "Usage Data:")}</strong> {t("privacy.s2.l4.desc", "includes information about how you use our website.")}</li>
               </ul>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-serif text-white">3. How We Use Your Data</h2>
+              <h2 className="text-2xl font-serif text-white">{t("privacy.s3.title", "3. How We Use Your Data")}</h2>
               <p>
-                We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:
+                {t("privacy.s3.p1", "We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:")}
               </p>
               <ul className="list-disc pl-6 space-y-2 text-warm-50/70">
-                <li>To respond to your inquiries and requests submitted via our contact forms.</li>
-                <li>To provide you with information about mass timings, events, or visits.</li>
-                <li>To improve our website, services, and visitor experiences.</li>
+                <li>{t("privacy.s3.l1", "To respond to your inquiries and requests submitted via our contact forms.")}</li>
+                <li>{t("privacy.s3.l2", "To provide you with information about mass timings, events, or visits.")}</li>
+                <li>{t("privacy.s3.l3", "To improve our website, services, and visitor experiences.")}</li>
               </ul>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-serif text-white">4. Data Security</h2>
+              <h2 className="text-2xl font-serif text-white">{t("privacy.s4.title", "4. Data Security")}</h2>
               <p>
-                We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used, or accessed in an unauthorized way, altered, or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors, and other third parties who have a business need to know.
+                {t("privacy.s4.p1", "We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used, or accessed in an unauthorized way, altered, or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors, and other third parties who have a business need to know.")}
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-serif text-white">5. Third-Party Links</h2>
+              <h2 className="text-2xl font-serif text-white">{t("privacy.s5.title", "5. Third-Party Links")}</h2>
               <p>
-                This website may include links to third-party websites, plug-ins, and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements.
+                {t("privacy.s5.p1", "This website may include links to third-party websites, plug-ins, and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements.")}
               </p>
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-serif text-white">6. Contact Us</h2>
+              <h2 className="text-2xl font-serif text-white">{t("privacy.s6.title", "6. Contact Us")}</h2>
               <p>
-                If you have any questions about this privacy policy or our privacy practices, please contact us at:
+                {t("privacy.s6.p1", "If you have any questions about this privacy policy or our privacy practices, please contact us at:")}
               </p>
               <div className="bg-white/5 p-6 rounded-2xl border border-white/10 mt-4">
                 <p className="text-white">Christ the King Church</p>

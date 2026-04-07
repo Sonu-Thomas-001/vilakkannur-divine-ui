@@ -225,7 +225,7 @@ export default function Visit() {
                     allowFullScreen={true} 
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Vilakkannur Church Location"
+                    title="Christ King Church Vilakkannur Location"
                     className="absolute inset-0"
                   ></iframe>
                 </div>
