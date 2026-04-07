@@ -1,9 +1,22 @@
-import { motion } from "motion/react";
-import { MapPin, Phone, Globe, BedDouble, Droplets, Tent, Building, Gamepad2, Utensils, CheckCircle2, Clock, AlertCircle, Info } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect } from "react";
+import { MapPin, Phone, Globe, BedDouble, Droplets, Tent, Building, Gamepad2, Utensils, CheckCircle2, Clock, AlertCircle, Info, X, ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Stays() {
   const { t } = useTranslation();
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [hasOptedOut, setHasOptedOut] = useState(false);
+
+  useEffect(() => {
+    if (hasOptedOut) return;
+
+    const interval = setInterval(() => {
+      setIsBookingModalOpen(true);
+    }, 10000); // Triggers every 10 seconds
+
+    return () => clearInterval(interval);
+  }, [hasOptedOut]);
 
   return (
     <div className="w-full bg-deep-black text-warm-100 overflow-hidden">
@@ -68,6 +81,14 @@ export default function Stays() {
                   <p className="text-warm-200/60 mt-4 max-w-2xl font-light leading-relaxed">
                     A peaceful and premium getaway surrounded by greenery and natural beauty. Offers a perfect blend of relaxation, celebration, and comfortable stay experiences designed to cater to families, couples, groups, and event-based guests.
                   </p>
+                  <div className="mt-6">
+                    <button 
+                      onClick={() => setIsBookingModalOpen(true)}
+                      className="btn-gold px-8 py-3 text-sm tracking-widest uppercase"
+                    >
+                      Book Your Stay
+                    </button>
+                  </div>
                 </div>
                 <div className="flex flex-col gap-4 text-sm bg-deep-black/40 p-5 rounded-2xl border border-white/5 w-full md:w-auto">
                   <a href="tel:+919061554545" className="flex items-center gap-3 text-warm-200/90 hover:text-white transition-colors text-base"><Phone className="w-5 h-5 text-gold-400" /> +91 90615 54545</a>
@@ -209,6 +230,91 @@ export default function Stays() {
 
         </div>
       </section>
+
+      {/* Booking Modal */}
+      <AnimatePresence>
+        {isBookingModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-deep-black/90 backdrop-blur-sm"
+            onClick={() => setIsBookingModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-ink border border-white/10 rounded-3xl p-8 max-w-md w-full relative shadow-2xl"
+            >
+              <button 
+                onClick={() => setIsBookingModalOpen(false)}
+                className="absolute top-4 right-4 p-2 text-warm-200/60 hover:text-white hover:bg-white/10 rounded-full transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 mx-auto bg-emerald-900/30 border border-emerald-500/30 rounded-full flex items-center justify-center mb-4">
+                  <BedDouble className="w-8 h-8 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-serif text-white mb-2">Book Your Stay</h3>
+                <p className="text-warm-200/70 font-light text-sm">
+                  Experience a peaceful and premium getaway at Ave Vista Resorts & Hotels. Choose how you would like to book.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <a 
+                  href="https://www.avevistaresorts.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 w-full bg-emerald-600 hover:bg-emerald-500 text-white py-4 rounded-xl transition-colors font-medium"
+                >
+                  <Globe className="w-5 h-5" />
+                  Book via Website
+                  <ExternalLink className="w-4 h-4 ml-1 opacity-70" />
+                </a>
+                
+                <div className="relative flex items-center py-2">
+                  <div className="flex-grow border-t border-white/10"></div>
+                  <span className="flex-shrink-0 mx-4 text-warm-200/40 text-xs uppercase tracking-widest">Or Call Directly</span>
+                  <div className="flex-grow border-t border-white/10"></div>
+                </div>
+
+                <a 
+                  href="tel:+919061554545" 
+                  className="flex items-center justify-center gap-3 w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white py-4 rounded-xl transition-colors font-medium"
+                >
+                  <Phone className="w-5 h-5 text-gold-400" />
+                  Call +91 90615 54545
+                </a>
+                
+                <a 
+                  href="tel:+919446595722" 
+                  className="flex items-center justify-center gap-3 w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white py-4 rounded-xl transition-colors font-medium"
+                >
+                  <Phone className="w-5 h-5 text-gold-400" />
+                  Call +91 94465 95722
+                </a>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-center">
+                <button 
+                  onClick={() => {
+                    setHasOptedOut(true);
+                    setIsBookingModalOpen(false);
+                  }}
+                  className="text-warm-200/50 hover:text-white text-sm transition-colors underline decoration-white/20 hover:decoration-white/50 underline-offset-4"
+                >
+                  Don't show this automatically again
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

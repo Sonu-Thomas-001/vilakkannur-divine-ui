@@ -1,13 +1,28 @@
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Clock, Sparkles, Calendar } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useIsMobile } from "../hooks/useIsMobile";
+
+const heroImages = [
+  "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg",
+  "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor.webp",
+  "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church-photo.jpg",
+  "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2010.jpg"
+];
 
 export default function Home() {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
   
   // Parallax Refs
   const heroRef = useRef(null);
@@ -41,15 +56,22 @@ export default function Home() {
       {/* 1. HERO SECTION */}
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         <motion.div style={{ y: isMobile ? "0%" : heroY, opacity: heroOpacity }} className="absolute inset-0 z-0">
-          <img
-            src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg"
-            alt="Church at Sunrise"
-            className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
-            referrerPolicy="no-referrer"
-          />
+          <AnimatePresence>
+            <motion.img
+              key={currentImageIndex}
+              src={heroImages[currentImageIndex]}
+              alt="Church at Sunrise"
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 0.4, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity"
+              referrerPolicy="no-referrer"
+            />
+          </AnimatePresence>
           <div className="absolute inset-0 bg-gradient-to-b from-deep-black/30 via-deep-black/60 to-deep-black"></div>
           <div className="light-ray"></div>
-          <div className="glow-emerald w-[1000px] h-[1000px] bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 opacity-40"></div>
+          <div className="glow-emerald w-[1000px] h-[1000px] bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 opacity-40 pointer-events-none"></div>
         </motion.div>
 
         {/* Particles */}
