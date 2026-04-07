@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
-import { Menu, X, MapPin, Phone, Mail, ChevronRight, Clock, Car, Instagram, Youtube, Facebook } from "lucide-react";
+import { Menu, X, MapPin, Phone, Mail, ChevronRight, Clock, Car, Instagram, Youtube, Facebook, BedDouble } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { cn } from "../lib/utils";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -46,8 +46,21 @@ export function Layout() {
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.hash, location.pathname]);
+
+  const showStaysIndicator = ['/', '/visit', '/miracle', '/stays'].includes(location.pathname);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -92,18 +105,53 @@ export function Layout() {
 
           {/* Right Actions */}
           <div className="hidden lg:flex items-center gap-4">
+            <AnimatePresence>
+              {showStaysIndicator && (
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <Link 
+                    to="/stays" 
+                    className="group relative flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(52,211,153,0.3)] hover:border-emerald-500/30 hover:-translate-y-0.5"
+                  >
+                    <div className="absolute inset-0 rounded-full bg-emerald-500/10 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <BedDouble className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
+                    <span className="text-xs font-medium text-warm-50/90 tracking-wide whitespace-nowrap">Nearby Stays</span>
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
             <ThemeToggle />
             <LanguageSwitcher isScrolled={isScrolled} />
             <Link 
               to="/visit" 
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-gold-500 text-white font-medium text-sm tracking-wide transition-all duration-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] hover:-translate-y-0.5 hover:scale-105"
+              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-gold-500 text-white font-medium text-sm tracking-wide transition-all duration-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] hover:-translate-y-0.5 hover:scale-105 whitespace-nowrap"
             >
               Plan Visit
             </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="lg:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-3">
+            <AnimatePresence>
+              {showStaysIndicator && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                >
+                  <Link 
+                    to="/stays" 
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300 shadow-[0_0_10px_rgba(52,211,153,0.1)]"
+                  >
+                    <BedDouble className="w-4 h-4 text-emerald-400" />
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
             <ThemeToggle />
             <LanguageSwitcher isScrolled={isScrolled} />
             <button
@@ -195,16 +243,50 @@ export function Layout() {
       </AnimatePresence>
 
       {/* Main Content */}
-      <main className="flex-grow">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <Outlet />
+      <main className="flex-grow relative">
+        <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+          <motion.div key={location.pathname} className="w-full h-full">
+            {/* Page Content */}
+            <motion.div
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={{
+                initial: { opacity: 0, scale: isMobile ? 1 : 0.98, y: isMobile ? 10 : 20 },
+                animate: { opacity: 1, scale: 1, y: 0, transition: { duration: isMobile ? 0.4 : 0.7, ease: [0.22, 1, 0.36, 1], delay: isMobile ? 0.1 : 0.2 } },
+                exit: { opacity: 0, scale: isMobile ? 1 : 0.98, y: isMobile ? -10 : -20, transition: { duration: isMobile ? 0.3 : 0.5, ease: [0.22, 1, 0.36, 1] } }
+              }}
+              className="w-full h-full"
+            >
+              <Outlet />
+            </motion.div>
+
+            {/* Accent Wipe - Hidden on mobile to save GPU */}
+            {!isMobile && (
+              <motion.div
+                className="fixed inset-0 z-[80] bg-gold-900/20 backdrop-blur-md pointer-events-none"
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={{
+                  initial: { scaleY: 1, originY: 0 },
+                  animate: { scaleY: 0, originY: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 } },
+                  exit: { scaleY: 1, originY: 1, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0 } }
+                }}
+              />
+            )}
+            {/* Main Wipe */}
+            <motion.div
+              className="fixed inset-0 z-[81] bg-[#0B0B0B] pointer-events-none"
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={{
+                initial: { scaleY: 1, originY: 0 },
+                animate: { scaleY: 0, originY: 0, transition: { duration: isMobile ? 0.4 : 0.6, ease: [0.22, 1, 0.36, 1], delay: 0 } },
+                exit: { scaleY: 1, originY: 1, transition: { duration: isMobile ? 0.4 : 0.6, ease: [0.22, 1, 0.36, 1], delay: isMobile ? 0 : 0.1 } }
+              }}
+            />
           </motion.div>
         </AnimatePresence>
       </main>

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import { Clock, MapPin, Bus, Train, Plane, CalendarDays, Info, HelpCircle, ChevronDown } from "lucide-react";
+import { Clock, MapPin, Bus, Train, Plane, CalendarDays, Info, HelpCircle, ChevronDown, BedDouble, Globe, Phone, Droplets, Tent, Building, Gamepad2, Utensils, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -254,6 +255,36 @@ export default function Visit() {
                       {t("visit.reach.road.desc", "Regular bus services operate from Kannur and Taliparamba. The route is via Taliparamba - Sreekandapuram - Naduvil.")}
                     </p>
                   </div>
+                </div>
+              </motion.div>
+
+              {/* Accommodation & Stays Link */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.1 }}
+                className="card-glass p-6 md:p-10 relative overflow-hidden group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-transparent pointer-events-none"></div>
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
+                  <div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-xl glass-dark flex items-center justify-center text-emerald-400 border-emerald-500/30">
+                        <BedDouble className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-serif text-white">Looking for Accommodation?</h3>
+                    </div>
+                    <p className="text-warm-200/70 text-base md:text-lg font-light max-w-xl">
+                      Explore our curated list of nearby stays, premium resorts, and pilgrim guesthouses for a comfortable visit.
+                    </p>
+                  </div>
+                  <Link 
+                    to="/stays"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-emerald-600/20 text-emerald-400 font-medium text-sm tracking-wide transition-all duration-300 hover:bg-emerald-600/30 hover:text-white border border-emerald-500/30 hover:border-emerald-500/50 whitespace-nowrap group-hover:scale-105"
+                  >
+                    View Nearby Stays
+                  </Link>
                 </div>
               </motion.div>
 
