@@ -98,36 +98,122 @@ export default function Visit() {
                 </div>
                 
                 <div className="space-y-6 md:space-y-8">
-                  <div className="flex justify-between items-end border-b border-white/10 pb-4 md:pb-6">
+                  {/* Monday to Thursday */}
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-white/10 pb-4 md:pb-6 gap-2">
                     <div>
-                      <h3 className="text-lg md:text-xl font-serif text-white">{t("visit.timing.sun.day", "Sundays")}</h3>
-                      <p className="text-xs md:text-sm text-warm-200/50 uppercase tracking-widest mt-1">{t("visit.timing.sun.type", "Holy Mass")}</p>
+                      <h3 className="text-lg md:text-xl font-serif text-white">Monday to Thursday</h3>
+                      <p className="text-xs md:text-sm text-warm-200/50 uppercase tracking-widest mt-1">Holy Mass</p>
                     </div>
-                    <p className="font-medium text-gold-400 text-base md:text-lg">7:00 AM & 9:30 AM</p>
+                    <p className="font-medium text-gold-400 text-base md:text-lg text-left sm:text-right">6:30 AM | 11:00 AM | 6:00 PM</p>
                   </div>
                   
-                  <div className="flex justify-between items-end border-b border-white/10 pb-4 md:pb-6">
+                  {/* Friday & Saturday */}
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-white/10 pb-4 md:pb-6 gap-2">
                     <div>
-                      <h3 className="text-lg md:text-xl font-serif text-white">{t("visit.timing.week.day", "Weekdays")}</h3>
-                      <p className="text-xs md:text-sm text-warm-200/50 uppercase tracking-widest mt-1">{t("visit.timing.week.type", "Holy Mass")}</p>
+                      <h3 className="text-lg md:text-xl font-serif text-white">Friday & Saturday</h3>
+                      <p className="text-xs md:text-sm text-warm-200/50 uppercase tracking-widest mt-1">Holy Mass & Novena</p>
                     </div>
-                    <p className="font-medium text-gold-400 text-base md:text-lg">6:30 AM</p>
+                    <p className="font-medium text-gold-400 text-base md:text-lg text-left sm:text-right">6:30 AM | 10:30 AM | 12:30 PM<br className="hidden sm:block" /> 3:30 PM | 6:00 PM</p>
                   </div>
                   
-                  <div className="flex justify-between items-end border-b border-white/10 pb-4 md:pb-6">
+                  {/* Sunday */}
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end border-b border-white/10 pb-4 md:pb-6 gap-2">
                     <div>
-                      <h3 className="text-lg md:text-xl font-serif text-white">{t("visit.timing.fri.day", "First Fridays")}</h3>
-                      <p className="text-xs md:text-sm text-warm-200/50 uppercase tracking-widest mt-1">{t("visit.timing.fri.type", "Mass & Adoration")}</p>
+                      <h3 className="text-lg md:text-xl font-serif text-white">Sunday</h3>
+                      <p className="text-xs md:text-sm text-warm-200/50 uppercase tracking-widest mt-1">Holy Mass</p>
                     </div>
-                    <p className="font-medium text-gold-400 text-base md:text-lg">6:30 AM & 4:30 PM</p>
+                    <p className="font-medium text-gold-400 text-base md:text-lg text-left sm:text-right">5:30 AM | 7:30 AM | 9:30 AM | 12:30 PM<br className="hidden sm:block" /> 3:30 PM | 5:30 PM | 7:30 PM</p>
                   </div>
-                  
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <h3 className="text-lg md:text-xl font-serif text-white">{t("visit.timing.tue.day", "Tuesdays")}</h3>
-                      <p className="text-xs md:text-sm text-warm-200/50 uppercase tracking-widest mt-1">{t("visit.timing.tue.type", "Special Novena")}</p>
+                </div>
+              </motion.div>
+
+              {/* Confession & Devotions */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.1 }}
+                className="card-glass p-6 md:p-10"
+              >
+                <div className="space-y-8">
+                  {/* Confession Timings */}
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-serif text-white mb-4 flex items-center gap-3">
+                      <span className="text-emerald-400">✝️</span> Confession Timings
+                    </h3>
+                    <ul className="space-y-2 text-warm-200/80 font-light">
+                      <li className="flex items-center gap-3"><Clock className="w-4 h-4 text-gold-400" /> 5:30 AM – 7:00 AM</li>
+                      <li className="flex items-center gap-3"><Clock className="w-4 h-4 text-gold-400" /> 10:00 AM – 11:30 AM</li>
+                      <li className="flex items-center gap-3"><Clock className="w-4 h-4 text-gold-400" /> 3:30 PM – 6:00 PM</li>
+                    </ul>
+                  </div>
+
+                  {/* Special Devotions */}
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-serif text-white mb-4 flex items-center gap-3">
+                      <span className="text-emerald-400">📿</span> Special Devotions
+                    </h3>
+                    <ul className="space-y-3 text-warm-200/80 font-light">
+                      <li className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></div>
+                        <div><strong className="text-white font-medium">Fridays:</strong> Holy Face Novena</div>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 shrink-0"></div>
+                        <div><strong className="text-white font-medium">Saturdays:</strong> Holy Face Rosary</div>
+                      </li>
+                      <li className="flex items-start gap-3 mt-4 bg-white/5 p-4 rounded-xl border border-white/5">
+                        <CalendarDays className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
+                        <div>
+                          <strong className="text-white font-medium block mb-1">Every Second Saturday</strong>
+                          One-Day Eucharistic Convention & Pilgrimage
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Adoration & Contact */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.2 }}
+                className="card-glass p-6 md:p-10 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-900/10 to-transparent pointer-events-none"></div>
+                <div className="space-y-8 relative z-10">
+                  {/* Adoration */}
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-serif text-white mb-3 flex items-center gap-3">
+                      <span className="text-gold-400">⛪</span> Eucharistic Adoration & Miracle Visit
+                    </h3>
+                    <p className="text-warm-200/80 font-light flex items-center gap-3">
+                      <Clock className="w-5 h-5 text-emerald-400" /> Daily from 5:30 AM to 8:00 PM
+                    </p>
+                  </div>
+
+                  {/* Accommodation */}
+                  <div className="bg-deep-black/40 p-5 rounded-2xl border border-white/5">
+                    <h4 className="text-white font-medium mb-2 flex items-center gap-2">
+                      <Utensils className="w-4 h-4 text-gold-400" /> Accommodation & Food
+                    </h4>
+                    <p className="text-warm-200/70 text-sm font-light">
+                      Available for those who inform in advance as possible.
+                    </p>
+                  </div>
+
+                  {/* Contact */}
+                  <div>
+                    <h4 className="text-white font-medium mb-3 flex items-center gap-2">
+                      <Phone className="w-4 h-4 text-emerald-400" /> Contact Numbers
+                    </h4>
+                    <div className="flex flex-wrap gap-3">
+                      <a href="tel:+919400062892" className="text-sm bg-white/5 hover:bg-white/10 transition-colors px-4 py-2 rounded-full border border-white/10 text-warm-200/90">+91 94000 62892</a>
+                      <a href="tel:+919747534689" className="text-sm bg-white/5 hover:bg-white/10 transition-colors px-4 py-2 rounded-full border border-white/10 text-warm-200/90">+91 97475 34689</a>
+                      <a href="tel:+919895322341" className="text-sm bg-white/5 hover:bg-white/10 transition-colors px-4 py-2 rounded-full border border-white/10 text-warm-200/90">+91 98953 22341</a>
                     </div>
-                    <p className="font-medium text-gold-400 text-base md:text-lg">4:30 PM</p>
                   </div>
                 </div>
               </motion.div>
@@ -136,7 +222,7 @@ export default function Visit() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.2 }}
+                transition={{ duration: 1, delay: 0.3 }}
                 className="card-glass p-6 md:p-10 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-transparent pointer-events-none"></div>

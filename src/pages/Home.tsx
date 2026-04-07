@@ -303,7 +303,106 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. PILGRIMAGE / VISIT SECTION */}
+      {/* 6. MEMORIES SECTION */}
+      <section className="section-padding relative bg-deep-black border-y border-white/5 overflow-hidden">
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-gold-400 font-serif italic text-xl mb-4 block tracking-widest uppercase">Memories</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-white">Our YouTube Channel</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                id: "u9c_4f8KUFI",
+                title: "തലശ്ശേരി അതിരൂപത ചെറുപുഷ്‌പ മിഷൻലീഗിൻ്റെ നേതൃത്വത്തിൽ രാജത്വതിരുനാൾ",
+                duration: "04:13:42"
+              },
+              {
+                id: "30WTQY8Mpnc",
+                title: "ഈശോയുടെ സ്വന്തം കാർലോ || (കലാസന്ധ്യ) || വിളക്കന്നൂർ ക്രിസ്തുരാജ തീർത്ഥാടന ദൈവാലയo",
+                duration: "02:01:48"
+              },
+              {
+                id: "b1Md_5hher0",
+                title: "വെരി. റവ. മോൺ. ആൻ്റണി മുതുകുന്നേൽ | ആഘോഷമായ വിശുദ്ധ കുർബാന",
+                duration: "01:39:45"
+              },
+              {
+                id: "ClbjcpX6ktA",
+                title: "ഫാ. ഷോൺ ജോസ് പേരൂക്കുന്നേൽ || ആഘോഷമായ വിശുദ്ധ കുർബാന",
+                duration: "01:22:48"
+              },
+              {
+                id: "fmFlfnHwNN4",
+                title: "ആഘോഷമായ വിശുദ്ധ കുർബാന ഫാ. ടോളസ് ആലുക്കൽ SDV",
+                duration: "01:32:41"
+              },
+              {
+                id: "i_7atM-G7AA",
+                title: "ഫാ. ഓസ്റ്റിൻ ചക്കാംകുന്നേൽ || ആഘോഷമായ വിശുദ്ധ കുർബാന, നൊവേന",
+                duration: "02:37:29"
+              },
+              {
+                id: "L3xZS_XblQo",
+                title: "വെരി. റവ. മോൺ. സെബാസ്റ്റ്യൻ പാലാക്കുഴി || ആഘോഷമായ വിശുദ്ധ കുർബാന",
+                duration: "01:36:20"
+              },
+              {
+                id: "elJNyc0O1Ws",
+                title: "വെരി. റവ.FR. അമൽ തൈപ്പറമ്പിൽ | വിശുദ്ധ കുർബാന",
+                duration: "01:30:43"
+              }
+            ].map((video, index) => (
+              <motion.a
+                key={video.id}
+                href={`https://www.youtube.com/watch?v=${video.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="group block relative rounded-2xl overflow-hidden bg-ink border border-white/10 hover:border-gold-500/50 transition-colors"
+              >
+                <div className="aspect-video relative overflow-hidden">
+                  <img 
+                    src={`https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`} 
+                    alt={video.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30 group-hover:scale-110 transition-transform duration-500">
+                      <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1"></div>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded font-mono">
+                    {video.duration}
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-warm-200/90 font-medium text-sm line-clamp-2 group-hover:text-gold-400 transition-colors" title={video.title}>
+                    {video.title}
+                  </h3>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <a 
+              href="https://youtube.com/@holyfacevilakkannur1968" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 transition-colors uppercase tracking-widest text-sm font-medium"
+            >
+              View All Videos on YouTube <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. PILGRIMAGE / VISIT SECTION */}
       <section className="section-padding relative bg-ink border-y border-white/5">
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">

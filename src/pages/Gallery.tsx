@@ -3,7 +3,7 @@ import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const categories = ["All", "Church", "Events", "Miracle", "Pilgrimage"];
+const categories = ["All", "Church", "Events", "Miracle", "Pilgrimage", "History"];
 
 const images = [
   {
@@ -159,7 +159,46 @@ const images = [
     titleKey: "gallery.images.sacred_relic",
     category: "Miracle",
     span: "md:col-span-2 md:row-span-1"
-  }
+  },
+  // History / Priests
+  { id: 23, url: "https://static.wixstatic.com/media/954860_9c4ba9947d1c4c4495c4d39f819bcb71~mv2.jpg", titleKey: "The Miracle", category: "Miracle", span: "md:col-span-1 md:row-span-1" },
+  { id: 24, url: "https://static.wixstatic.com/media/954860_7505e3f4731848d797297913261c066e~mv2.jpg", titleKey: "Fr Vengakkunnel", category: "History", span: "md:col-span-1 md:row-span-1" },
+  { id: 25, url: "https://static.wixstatic.com/media/954860_263512ca544b42caa39979c7e7dd9bfe~mv2.jpg", titleKey: "Fr Vengakkunnel", category: "History", span: "md:col-span-1 md:row-span-1" },
+  { id: 26, url: "https://static.wixstatic.com/media/954860_4d79dfa2c60c445f9a8d348febb33cb9~mv2.jpg", titleKey: "Fr Vengakkunnel", category: "History", span: "md:col-span-1 md:row-span-1" },
+  { id: 27, url: "https://static.wixstatic.com/media/954860_8b832bd0a73f4c48ac1aaf881d23f672~mv2.jpg", titleKey: "Fr Vengakkunnel", category: "History", span: "md:col-span-1 md:row-span-1" },
+  { id: 28, url: "https://static.wixstatic.com/media/954860_b5fff946f33949219587784395b43440~mv2.jpg", titleKey: "Fr Vengakkunnel", category: "History", span: "md:col-span-1 md:row-span-2" },
+  { id: 29, url: "https://static.wixstatic.com/media/954860_e0b511dde5c2438abdfafab4e2227c22~mv2.jpg", titleKey: "Fr Vengakkunnel", category: "History", span: "md:col-span-1 md:row-span-2" },
+  { id: 30, url: "https://static.wixstatic.com/media/954860_aa8e4b35b94a48ae9b40988ab2835408~mv2.jpg", titleKey: "Fr Kuttikkattukunnel", category: "History", span: "md:col-span-1 md:row-span-1" },
+  { id: 31, url: "https://static.wixstatic.com/media/954860_fdaa71d8d680467983c98fc4c123057c~mv2.jpg", titleKey: "Fr Kuttikkattukunnel", category: "History", span: "md:col-span-1 md:row-span-1" },
+  { id: 32, url: "https://static.wixstatic.com/media/954860_2255e7370aad4a06a6e408d1c5a5a4b7~mv2.jpg", titleKey: "Fr Kuttikkattukunnel", category: "History", span: "md:col-span-1 md:row-span-1" },
+  { id: 33, url: "https://static.wixstatic.com/media/954860_0defc5662c5b4fcca96e87615235be63~mv2.jpg", titleKey: "Fr Kuttikkattukunnel", category: "History", span: "md:col-span-1 md:row-span-1" },
+  { id: 34, url: "https://static.wixstatic.com/media/954860_3049db429576494eb3266d0d07e2e901~mv2.jpg", titleKey: "The Miracle", category: "Miracle", span: "md:col-span-1 md:row-span-1" },
+  // May 31 Events
+  { id: 35, url: "https://static.wixstatic.com/media/954860_78e628a106a84e81905f3972ceb9e309~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-2 md:row-span-1" },
+  { id: 36, url: "https://static.wixstatic.com/media/954860_368a920f8ce84eb3aee8968365be0037~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 37, url: "https://static.wixstatic.com/media/954860_cae12d91466c41909f204721a7006244~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 38, url: "https://static.wixstatic.com/media/954860_1daab75c6d32474ca2ab38b3a3f1d46f~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 39, url: "https://static.wixstatic.com/media/954860_8b9fd048a62c49da9c8ae76cd6f63c85~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 40, url: "https://static.wixstatic.com/media/954860_6616ede5ca574d8caa0124cbce25d477~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 41, url: "https://static.wixstatic.com/media/954860_2babecaf4a764a31903c23f367d9a8d4~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 42, url: "https://static.wixstatic.com/media/954860_ea6bb747a3f243c38d2e3fc0a5570983~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 43, url: "https://static.wixstatic.com/media/954860_26b2d90e35bb48ffac6698cdbcebf645~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 44, url: "https://static.wixstatic.com/media/954860_1910023ee6e449298347f4353201292e~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 45, url: "https://static.wixstatic.com/media/954860_67b0e428baab4d158a20c2bcf3687bff~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 46, url: "https://static.wixstatic.com/media/954860_6e5f65d12a76473f93be6b6d96f3fba3~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 47, url: "https://static.wixstatic.com/media/954860_a7f482dae0804eb9bf1243bd011d226d~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 48, url: "https://static.wixstatic.com/media/954860_07fa696aecda45c684a29d0c5dedfca8~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-2" },
+  { id: 49, url: "https://static.wixstatic.com/media/954860_06617d3659fc41d9a3282862b326f02b~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 50, url: "https://static.wixstatic.com/media/954860_9cb9320a0b13444f84e0b95cc4843026~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 51, url: "https://static.wixstatic.com/media/954860_3eb3399aec7946f5bedda08323e2decd~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 52, url: "https://static.wixstatic.com/media/954860_a858710539da44f79f0296a75b72cb7f~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-2" },
+  { id: 53, url: "https://static.wixstatic.com/media/954860_b21f0de4ce8e4e7cb7c4b64c7a8d736d~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 54, url: "https://static.wixstatic.com/media/954860_9308f187061f4187bd9fca8ddf02c9c1~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 55, url: "https://static.wixstatic.com/media/954860_61f82864740c43149b18efc57af0ab77~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 56, url: "https://static.wixstatic.com/media/954860_089386ea66a44a219450ca286ac23d17~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 57, url: "https://static.wixstatic.com/media/954860_d61ad80ff66e424caab756a4a4edd360~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 58, url: "https://static.wixstatic.com/media/954860_0c29e4ce7cf74994b15a31335a3e2368~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" },
+  { id: 59, url: "https://static.wixstatic.com/media/954860_d0764bac99cc46b1be2f2a0e6dc2cdf9~mv2.jpg", titleKey: "May 31 Event", category: "Events", span: "md:col-span-1 md:row-span-1" }
 ];
 
 export default function Gallery() {

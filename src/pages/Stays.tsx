@@ -55,6 +55,9 @@ export default function Stays() {
               
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 relative z-10 gap-6 border-b border-white/10 pb-8">
                 <div>
+                  <div className="mb-6">
+                    <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/AVR%20PMS/Logo/logo-white.png" alt="Ave Vista Resorts Logo" className="h-16 md:h-20 object-contain" referrerPolicy="no-referrer" />
+                  </div>
                   <div className="flex items-center gap-4 mb-3">
                     <h2 className="font-serif text-3xl md:text-4xl text-white group-hover:text-gold-400 transition-colors">Ave Vista Resorts & Hotels</h2>
                     <span className="text-xs font-medium px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 whitespace-nowrap">Featured Stay</span>
@@ -71,6 +74,40 @@ export default function Stays() {
                   <a href="tel:+919446595722" className="flex items-center gap-3 text-warm-200/90 hover:text-white transition-colors text-base"><Phone className="w-5 h-5 text-gold-400" /> +91 94465 95722</a>
                   <a href="https://www.avevistaresorts.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-warm-200/90 hover:text-white transition-colors text-base"><Globe className="w-5 h-5 text-gold-400" /> www.avevistaresorts.com</a>
                   <a href="mailto:avevistaresort@gmail.com" className="flex items-center gap-3 text-warm-200/90 hover:text-white transition-colors text-base"><Globe className="w-5 h-5 text-gold-400" /> avevistaresort@gmail.com</a>
+                </div>
+              </div>
+
+              {/* Image Gallery */}
+              <div className="mb-12 relative z-10">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                  <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden relative group">
+                    <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/AVR%20PMS/A1.JPG" alt="Ave Vista Resort" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                  </div>
+                  <div className="rounded-2xl overflow-hidden relative group aspect-square">
+                    <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/AVR%20PMS/Swimming%20Pool.jpg" alt="Swimming Pool" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden relative group aspect-square">
+                    <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/AVR%20PMS/Family%20Cottage.jpg" alt="Family Cottage" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden relative group aspect-square">
+                    <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/AVR%20PMS/Tree%20House.jpg" alt="Tree House" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden relative group aspect-square">
+                    <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/AVR%20PMS/Mini%20Auditorium.jpg" alt="Mini Auditorium" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden relative group aspect-square">
+                    <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/AVR%20PMS/A2.JPG" alt="Resort View" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden relative group aspect-square">
+                    <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/AVR%20PMS/A3.JPG" alt="Resort View" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden relative group aspect-square">
+                    <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/AVR%20PMS/A4.JPG" alt="Resort View" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden relative group aspect-square">
+                    <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/AVR%20PMS/Dormitory.jpg" alt="Dormitory" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  </div>
                 </div>
               </div>
 
