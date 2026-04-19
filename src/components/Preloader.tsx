@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { useEffect } from "react";
 import { useIsMobile } from "../hooks/useIsMobile";
 
-export function Preloader({ onComplete }: { onComplete: () => void }) {
+export function Preloader({ onComplete }: { onComplete: () => void; key?: string | number }) {
   const isMobile = useIsMobile();
   const duration = isMobile ? 1500 : 2500;
 

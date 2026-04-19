@@ -89,7 +89,7 @@ export default function BookingPopup() {
         className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-[45] flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white px-5 py-3.5 rounded-full shadow-[0_0_20px_rgba(5,150,105,0.4)] hover:shadow-[0_0_30px_rgba(5,150,105,0.6)] hover:-translate-y-1 transition-all duration-300 border border-emerald-400/30 group"
       >
         <BedDouble className="w-5 h-5 group-hover:scale-110 transition-transform" />
-        <span className="font-medium text-sm tracking-wide">Book Resort</span>
+        <span className="font-medium text-sm tracking-wide">Book Your Stay</span>
       </motion.button>
 
       <AnimatePresence>
@@ -147,7 +147,7 @@ export default function BookingPopup() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-medium uppercase tracking-widest mb-4">
                   <BedDouble className="w-3 h-3" /> Featured Stay
                 </div>
-                <h4 className="text-2xl font-serif text-white mb-3">Plan Your Getaway</h4>
+                <h4 className="text-2xl font-serif text-white mb-3">Book Your Stay</h4>
                 <p className="text-warm-200/70 font-light text-sm leading-relaxed">
                   Experience a peaceful and premium retreat surrounded by nature. Perfect for families, couples, and special events.
                 </p>
