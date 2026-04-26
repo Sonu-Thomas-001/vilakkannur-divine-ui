@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vilakkannurchurch.org/sitemap.xml
+Sitemap: https://vilakkannurchurch.vercel.app/sitemap.xml

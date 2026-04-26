@@ -6,6 +6,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { AnimatePresence } from "motion/react";
+import { HelmetProvider } from "react-helmet-async";
 import { Layout } from "./components/Layout";
 import { SmoothScroll } from "./components/SmoothScroll";
 import { ThemeProvider } from "./context/ThemeContext";
@@ -24,10 +25,11 @@ export default function App() {
   const [isPreloading, setIsPreloading] = useState(true);
 
   return (
-    <ThemeProvider>
-      <BrowserRouter>
-        <SmoothScroll>
-          <AnimatePresence mode="wait">
+    <HelmetProvider>
+      <ThemeProvider>
+        <BrowserRouter>
+          <SmoothScroll>
+            <AnimatePresence mode="wait">
             {isPreloading && <Preloader key="preloader" onComplete={() => setIsPreloading(false)} />}
           </AnimatePresence>
           <Routes>
@@ -46,5 +48,6 @@ export default function App() {
         </SmoothScroll>
       </BrowserRouter>
     </ThemeProvider>
+    </HelmetProvider>
   );
 }

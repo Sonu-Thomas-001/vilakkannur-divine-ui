@@ -4,6 +4,7 @@ import { ArrowRight, MapPin, Clock, Sparkles, Calendar } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useRef, useState, useEffect } from "react";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { SEO } from "../components/SEO";
 
 const heroImages = [
   "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg",
@@ -53,6 +54,27 @@ export default function Home() {
 
   return (
     <div className="w-full bg-deep-black text-warm-100 overflow-hidden">
+      <SEO 
+        title="Christ the King Church Vilakkannur | Eucharistic Miracle Kerala"
+        description="Discover the Vatican-recognized Eucharistic miracle at Christ the King Church, Vilakkannur. Plan your spiritual pilgrimage to Kerala, India."
+        canonicalPath="/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Church",
+          "name": "Christ the King Church Vilakkannur",
+          "description": "A Vatican-recognized Eucharistic miracle church in Kerala, India.",
+          "image": "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Vilakkannur, Naduvil P.O",
+            "addressLocality": "Kannur",
+            "addressRegion": "Kerala",
+            "postalCode": "670582",
+            "addressCountry": "IN"
+          },
+          "telephone": "+919400062892"
+        }}
+      />
       {/* 1. HERO SECTION */}
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         <motion.div style={{ y: isMobile ? "0%" : heroY, opacity: heroOpacity }} className="absolute inset-0 z-0">

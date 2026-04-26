@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { SEO } from "../components/SEO";
 
 const categories = ["All", "Church", "Events", "Miracle", "Pilgrimage", "History"];
 
@@ -212,6 +213,11 @@ export default function Gallery() {
 
   return (
     <div className="w-full bg-deep-black text-warm-100 min-h-screen overflow-hidden">
+      <SEO 
+        title="Vilakkannur Church Gallery | Miracle Photos & Tour"
+        description="View photos of the 2013 Eucharistic miracle, the church interior, and faithful pilgrims visiting Christ the King Church in Vilakkannur, Kerala."
+        canonicalPath="/gallery"
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-deep-black">
@@ -233,7 +239,7 @@ export default function Gallery() {
           className="container mx-auto max-w-5xl relative z-10 text-center px-4 md:px-6 mt-20"
         >
           <span className="text-emerald-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("gallery.hero.badge", "Visual Journey")}</span>
-          <h1 className="text-white mb-6 md:mb-10 tracking-tight">
+          <h1 className="text-white mb-6 md:mb-10 tracking-tight text-5xl md:text-7xl lg:text-8xl">
             <span dangerouslySetInnerHTML={{ __html: t("gallery.hero.title", "Christ King Church Vilakkannur <br /><span class='text-gradient-emerald italic pr-4'>Gallery</span>") }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">

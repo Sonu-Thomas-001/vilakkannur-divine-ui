@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { SEO } from "../components/SEO";
 
 export default function Miracle() {
   const { t } = useTranslation();
@@ -57,6 +58,30 @@ export default function Miracle() {
 
   return (
     <div className="w-full bg-deep-black text-warm-100 overflow-hidden">
+      <SEO 
+        title="The Eucharistic Miracle of Vilakkannur | Vatican Recognized Catholic Miracle"
+        description="Learn the timeline of the 2013 Eucharistic miracle at Vilakkannur Church, India, featuring the face of Jesus Christ. Vatican recognized in 2025."
+        canonicalPath="/miracle"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "The Eucharistic Miracle of Vilakkannur",
+          "description": "Learn the timeline of the 2013 Eucharistic miracle at Vilakkannur Church, India, featuring the face of Jesus Christ.",
+          "image": "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor.webp",
+          "author": {
+            "@type": "Organization",
+            "name": "Christ the King Church Vilakkannur"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Christ the King Church Vilakkannur",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://vilakkannurchurch.vercel.app/logo.png"
+            }
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-deep-black">
@@ -78,8 +103,8 @@ export default function Miracle() {
           className="container mx-auto max-w-5xl relative z-10 text-center px-4 md:px-6 mt-20"
         >
           <span className="text-gold-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("miracle.hero.badge", "The Divine Sign")}</span>
-          <h1 className="text-white mb-6 md:mb-10 tracking-tight">
-            <span dangerouslySetInnerHTML={{ __html: t("miracle.hero.title", "The Eucharistic <br/><span class='text-gradient-gold italic pr-4'>Miracle in India</span>") }} />
+          <h1 className="text-white mb-6 md:mb-10 tracking-tight text-5xl md:text-7xl lg:text-8xl">
+            <span dangerouslySetInnerHTML={{ __html: t("miracle.hero.title", "The Eucharistic <br/><span class='text-gradient-gold italic pr-4'>Miracle of Vilakkannur</span>") }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
             {t("miracle.hero.subtitle", "A profound manifestation of Christ's real presence that drew the world's eyes to Vilakkannur, making it a center for Catholic miracles in India.")}

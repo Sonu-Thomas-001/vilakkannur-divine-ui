@@ -1,12 +1,22 @@
 import { motion } from "motion/react";
 import { MapPin, Phone, Mail, Send, Navigation } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { SEO } from "../components/SEO";
 
 export default function Contact() {
   const { t } = useTranslation();
 
   return (
     <div className="w-full bg-deep-black text-warm-100 min-h-screen overflow-hidden">
+      <SEO 
+        title="Contact Vilakkannur Church | Location, Address & Phone Number"
+        description="Get in touch with Christ the King Church Vilakkannur. Find our address, contact phone numbers (+919400062892), email, and Google map location."
+        canonicalPath="/contact"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage"
+        }}
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-deep-black">
@@ -28,7 +38,7 @@ export default function Contact() {
           className="container mx-auto max-w-5xl relative z-10 text-center px-4 md:px-6 mt-20"
         >
           <span className="text-gold-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("contact.hero.badge", "Get in Touch")}</span>
-          <h1 className="text-white mb-6 md:mb-10 tracking-tight">
+          <h1 className="text-white mb-6 md:mb-10 tracking-tight text-5xl md:text-7xl lg:text-8xl">
             <span dangerouslySetInnerHTML={{ __html: t("contact.hero.title", "Contact <span class='text-gradient-gold italic pr-4'>Christ King Church Vilakkannur</span>") }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">

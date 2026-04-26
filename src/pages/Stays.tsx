@@ -1,12 +1,18 @@
 import { motion } from "motion/react";
 import { MapPin, Phone, Globe, BedDouble, Droplets, Tent, Building, Gamepad2, Utensils, CheckCircle2, Clock, AlertCircle, Info } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { SEO } from "../components/SEO";
 
 export default function Stays() {
   const { t } = useTranslation();
 
   return (
     <div className="w-full bg-deep-black text-warm-100 overflow-hidden">
+      <SEO 
+        title="Stays Near Vilakkannur Church | Hotels & Resorts in Alakode, Kerala"
+        description="Find the best hotels, resorts, and stays near Vilakkannur Church. Book your accommodation at Ave Vista Resorts for a peaceful spiritual trip in Kerala."
+        canonicalPath="/stays"
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-deep-black">
@@ -28,8 +34,8 @@ export default function Stays() {
           className="container mx-auto max-w-5xl relative z-10 text-center px-4 md:px-6 mt-20"
         >
           <span className="text-emerald-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">Accommodation</span>
-          <h1 className="text-white mb-6 md:mb-10 tracking-tight">
-            <span dangerouslySetInnerHTML={{ __html: "Nearby <span class='text-gradient-gold italic pr-4'>Stays & Resorts</span>" }} />
+          <h1 className="text-white mb-6 md:mb-10 tracking-tight text-5xl md:text-7xl lg:text-8xl">
+            <span dangerouslySetInnerHTML={{ __html: "Stays Near <span class='text-gradient-gold italic pr-4'>Vilakkannur Church</span>" }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto">
             Find the perfect accommodation for your pilgrimage, family trip, or special occasion near Vilakkannur.

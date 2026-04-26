@@ -3,6 +3,7 @@ import { Clock, MapPin, Bus, Train, Plane, CalendarDays, Info, HelpCircle, Chevr
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { SEO } from "../components/SEO";
 
 export default function Visit() {
   const { t } = useTranslation();
@@ -29,6 +30,23 @@ export default function Visit() {
 
   return (
     <div className="w-full bg-deep-black text-warm-100 overflow-hidden">
+      <SEO 
+        title="Plan Your Visit | Vilakkannur Church Pilgrim Guide & Timings"
+        description="Find mass timings, directions, and pilgrim information for visiting the Eucharistic miracle at Christ the King Church in Vilakkannur, Kerala."
+        canonicalPath="/visit"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        }}
+      />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-deep-black">
@@ -50,8 +68,8 @@ export default function Visit() {
           className="container mx-auto max-w-5xl relative z-10 text-center px-4 md:px-6 mt-20"
         >
           <span className="text-gold-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("visit.hero.badge", "Plan Your Journey")}</span>
-          <h1 className="text-white mb-6 md:mb-10 tracking-tight">
-            <span dangerouslySetInnerHTML={{ __html: t("visit.hero.title", "Visit <span class='text-gradient-gold italic pr-4'>Vilakkannur</span>") }} />
+          <h1 className="text-white mb-6 md:mb-10 tracking-tight text-5xl md:text-7xl lg:text-8xl">
+            <span dangerouslySetInnerHTML={{ __html: t("visit.hero.title", "Visit <span class='text-gradient-gold italic pr-4'>Vilakkannur Church</span>") }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
             {t("visit.hero.subtitle", "Essential information for pilgrims and travelers seeking to experience the sanctuary and spiritual tourism in Kerala.")}

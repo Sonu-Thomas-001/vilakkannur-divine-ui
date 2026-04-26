@@ -1,12 +1,18 @@
 import { motion } from "motion/react";
 import { MapPin, History, Users, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { SEO } from "../components/SEO";
 
 export default function About() {
   const { t } = useTranslation();
 
   return (
     <div className="w-full bg-deep-black text-warm-100 overflow-hidden">
+      <SEO 
+        title="About Christ the King Church | History of Vilakkannur Parish"
+        description="Learn about the rich history and heritage of Christ the King Church in Vilakkannur, Kerala, a prime destination for spiritual tourism to a miraculous site."
+        canonicalPath="/about"
+      />
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-deep-black">
@@ -28,7 +34,7 @@ export default function About() {
           className="container mx-auto max-w-5xl relative z-10 text-center px-4 md:px-6 mt-20"
         >
           <span className="text-emerald-400 font-serif italic text-xl md:text-2xl mb-4 md:mb-6 block tracking-widest uppercase">{t("about.hero.badge", "Our Heritage")}</span>
-          <h1 className="text-white mb-6 md:mb-10 tracking-tight">
+          <h1 className="text-white mb-6 md:mb-10 tracking-tight text-5xl md:text-7xl lg:text-8xl">
             <span dangerouslySetInnerHTML={{ __html: t("about.hero.title", "Christ the King <br/><span class='text-gradient-emerald italic pr-4'>Church, Vilakkannur</span>") }} />
           </h1>
           <p className="text-warm-200/80 text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl mx-auto">
