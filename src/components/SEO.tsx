@@ -1,42 +1,168 @@
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+
+export const SITE_URL = 'https://vilakkannurchurch.vercel.app';
+export const DEFAULT_OG_IMAGE = 'https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg';
 
 interface SEOProps {
   title: string;
   description: string;
   canonicalPath?: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
   schema?: Record<string, any> | Record<string, any>[];
+  noIndex?: boolean;
 }
 
-export function SEO({ title, description, canonicalPath, schema }: SEOProps) {
-  const siteUrl = 'https://vilakkannurchurch.vercel.app';
-  const url = canonicalPath ? `${siteUrl}${canonicalPath}` : siteUrl;
+export function SEO({
+  title,
+  description,
+  canonicalPath = '',
+  ogType = 'website',
+  ogImage = DEFAULT_OG_IMAGE,
+  schema,
+  noIndex = false,
+}: SEOProps) {
+  const { i18n } = useTranslation();
+
+  // Normalize path
+  const normalizedPath = canonicalPath.startsWith('/')
+    ? canonicalPath
+    : canonicalPath ? `/${canonicalPath}` : '';
+  const canonicalUrl = `${SITE_URL}${normalizedPath}`;
+
+  // Organization baseline schema
+  const defaultOrgSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CatholicChurch',
+    '@id': `${SITE_URL}/#church`,
+    name: 'Christ the King Church, Vilakkannur',
+    alternateName: [
+      'Vilakkannur Church',
+      'Christ King Church Vilakkannur',
+      'Vilakkannoor Church',
+      'ക്രിസ്തുരാജ ദേവാലയം വിളക്കന്നൂർ',
+    ],
+    url: SITE_URL,
+    logo: `${SITE_URL}/logos/logo-icon.svg`,
+    image: DEFAULT_OG_IMAGE,
+    description:
+      'Christ the King Church in Vilakkannur, Kerala, India - site of the Vatican-recognized Eucharistic Miracle of 2013, public veneration, and Catholic pilgrimage.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Vilakkannur, Naduvil P.O',
+      addressLocality: 'Kannur',
+      addressRegion: 'Kerala',
+      postalCode: '670582',
+      addressCountry: 'IN',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 12.044144,
+      longitude: 75.526978,
+    },
+    telephone: '+919400062892',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday',
+        ],
+        opens: '05:30',
+        closes: '20:00',
+      },
+    ],
+    sameAs: [
+      'https://www.facebook.com',
+      'https://www.instagram.com',
+      'https://www.youtube.com',
+    ],
+  };
+
+  // Build schema list
+  const schemaList: Record<string, any>[] = [];
+  if (schema) {
+    if (Array.isArray(schema)) {
+      schemaList.push(...schema);
+    } else {
+      schemaList.push(schema);
+    }
+  }
+
+  // Determine language locale for OG
+  const currentLang = i18n.language ? i18n.language.split('-')[0] : 'en';
+  const ogLocaleMap: Record<string, string> = {
+    en: 'en_US',
+    ml: 'ml_IN',
+    hi: 'hi_IN',
+    ta: 'ta_IN',
+  };
+  const ogLocale = ogLocaleMap[currentLang] || 'en_US';
 
   return (
     <Helmet>
+      {/* Primary HTML Meta Tags */}
       <title>{title}</title>
+      <meta name="title" content={title} />
       <meta name="description" content={description} />
-      <link rel="canonical" href={url} />
-      
-      {/* Open Graph / Social Media */}
+      <link rel="canonical" href={canonicalUrl} />
+
+      {/* Crawl & Index Directives */}
+      {noIndex ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <>
+          <meta
+            name="robots"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+          />
+          <meta name="googlebot" content="index, follow" />
+        </>
+      )}
+
+      {/* Multilingual Alternate URLs (Distinct URLs per language code) */}
+      <link rel="alternate" hrefLang="en" href={`${canonicalUrl}${normalizedPath.includes('?') ? '&' : '?'}lng=en`} />
+      <link rel="alternate" hrefLang="ml" href={`${canonicalUrl}${normalizedPath.includes('?') ? '&' : '?'}lng=ml`} />
+      <link rel="alternate" hrefLang="hi" href={`${canonicalUrl}${normalizedPath.includes('?') ? '&' : '?'}lng=hi`} />
+      <link rel="alternate" hrefLang="ta" href={`${canonicalUrl}${normalizedPath.includes('?') ? '&' : '?'}lng=ta`} />
+      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content={ogType} />
+      <meta property="og:site_name" content="Christ the King Church, Vilakkannur" />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={url} />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content={ogLocale} />
 
-      {/* Multilingual SEO Hreflang Tags */}
-      <link rel="alternate" hrefLang="en" href={url} />
-      <link rel="alternate" hrefLang="ml" href={url} />
-      <link rel="alternate" hrefLang="hi" href={url} />
-      <link rel="alternate" hrefLang="ta" href={url} />
-      <link rel="alternate" hrefLang="x-default" href={url} />
+      {/* Twitter / X */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={canonicalUrl} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
 
-      {/* Schema Markup (JSON-LD) */}
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
+      {/* Baseline Church Organization Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify(defaultOrgSchema)}
+      </script>
+
+      {/* Additional Page-Specific Schemas */}
+      {schemaList.map((item, idx) => (
+        <script key={idx} type="application/ld+json">
+          {JSON.stringify(item)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 }
+

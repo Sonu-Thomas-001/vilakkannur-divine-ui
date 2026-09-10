@@ -48,9 +48,14 @@
 
   html {
     scroll-behavior: smooth;
+    position: relative;
   }
   body {
+    position: relative;
     @apply bg-deep-black text-warm-100 font-sans antialiased selection:bg-gold-500/30 selection:text-gold-300 overflow-x-hidden transition-colors duration-500;
+  }
+  #root {
+    position: relative;
   }
   
   body.light-mode {

@@ -29,11 +29,26 @@ export function Layout() {
 
   const navLinks = [
     { name: t("nav.home", "Home"), path: "/" },
-    { name: t("nav.about", "About"), path: "/about" },
-    { name: t("nav.miracle", "The Miracle"), path: "/miracle" },
-    { name: t("nav.visit", "Visit"), path: "/visit" },
+    { name: t("nav.miracle", "The Miracle"), path: "/eucharistic-miracle" },
+    { name: "Mass Timings", path: "/mass-timings" },
+    { name: "How to Reach", path: "/how-to-reach" },
+    { name: "Pilgrimage", path: "/pilgrimage" },
+    { name: "FAQ", path: "/faq" },
     { name: t("nav.gallery", "Gallery"), path: "/gallery" },
     { name: t("nav.contact", "Contact"), path: "/contact" },
+  ];
+
+  const footerLinks = [
+    { name: "Eucharistic Miracle", path: "/eucharistic-miracle" },
+    { name: "Holy Mass Timings", path: "/mass-timings" },
+    { name: "How to Reach & Trains", path: "/how-to-reach" },
+    { name: "Church Location & Map", path: "/location" },
+    { name: "Pilgrimage & Convention", path: "/pilgrimage" },
+    { name: "Stays & Resorts", path: "/nearby-stays" },
+    { name: "Frequently Asked Questions", path: "/faq" },
+    { name: "Parish History & About", path: "/about" },
+    { name: "Photo Gallery", path: "/gallery" },
+    { name: "Contact & Intention Desk", path: "/contact" },
   ];
 
   useEffect(() => {
@@ -61,10 +76,10 @@ export function Layout() {
     }
   }, [location.hash, location.pathname]);
 
-  const showStaysIndicator = ['/', '/visit', '/miracle', '/stays'].includes(location.pathname);
+  const showStaysIndicator = ['/', '/visit', '/eucharistic-miracle', '/miracle', '/stays', '/nearby-stays', '/pilgrimage', '/how-to-reach', '/mass-timings'].includes(location.pathname);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="relative flex flex-col min-h-screen">
       {/* Navigation */}
       <header
         className={cn(
@@ -115,7 +130,7 @@ export function Layout() {
                   transition={{ duration: 0.4 }}
                 >
                   <Link 
-                    to="/stays" 
+                    to="/nearby-stays" 
                     className="group relative flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(52,211,153,0.3)] hover:border-emerald-500/30 hover:-translate-y-0.5"
                   >
                     <div className="absolute inset-0 rounded-full bg-emerald-500/10 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -128,7 +143,7 @@ export function Layout() {
             <ThemeToggle />
             <LanguageSwitcher isScrolled={isScrolled} />
             <Link 
-              to="/visit" 
+              to="/how-to-reach" 
               className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-gold-500 text-white font-medium text-sm tracking-wide transition-all duration-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] hover:-translate-y-0.5 hover:scale-105 whitespace-nowrap"
             >
               Plan Visit
@@ -145,7 +160,7 @@ export function Layout() {
                   exit={{ opacity: 0, scale: 0.8 }}
                 >
                   <Link 
-                    to="/stays" 
+                    to="/nearby-stays" 
                     className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300 shadow-[0_0_10px_rgba(52,211,153,0.1)]"
                   >
                     <BedDouble className="w-4 h-4 text-emerald-400" />
@@ -368,16 +383,16 @@ export function Layout() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h4 className="font-serif text-lg text-gold-400 mb-6">{t("footer.quick_links", "Quick Links")}</h4>
-              <ul className="space-y-3">
-                {navLinks.map((link) => (
+              <h4 className="font-serif text-lg text-gold-400 mb-6">Explore Sanctuary</h4>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+                {footerLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.path}
-                      className="text-sm text-warm-50/60 hover:text-gold-400 transition-colors flex items-center gap-2 group w-fit"
+                      className="text-xs sm:text-sm text-warm-50/60 hover:text-gold-400 transition-colors flex items-center gap-1.5 group w-fit"
                     >
-                      <ChevronRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-gold-400" />
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">{link.name}</span>
+                      <ChevronRight className="w-3 h-3 text-gold-400/50 group-hover:text-gold-400 group-hover:translate-x-0.5 transition-all" />
+                      <span>{link.name}</span>
                     </Link>
                   </li>
                 ))}
@@ -396,15 +411,19 @@ export function Layout() {
                 <li className="flex items-start gap-3 text-sm text-warm-50/60 group">
                   <Clock className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <span className="block text-white/90 mb-1">Holy Mass Timings</span>
-                    <span>Sundays: 7:00 AM, 9:30 AM<br/>Weekdays: 6:30 AM</span>
+                    <Link to="/mass-timings" className="block text-white/90 hover:text-gold-400 transition-colors font-medium mb-1">
+                      Holy Mass Timings →
+                    </Link>
+                    <span>Mon–Thu: 6:30 AM, 11 AM, 6 PM<br/>Fri–Sat: 5 Masses | Sun: 7 Masses</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-warm-50/60 group">
                   <Car className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <span className="block text-white/90 mb-1">Travel Info</span>
-                    <span>Nearest Airport: Kannur (CNN)<br/>Nearest Railway: Kannur (CAN)</span>
+                    <Link to="/how-to-reach" className="block text-white/90 hover:text-gold-400 transition-colors font-medium mb-1">
+                      Travel & Transit Hubs →
+                    </Link>
+                    <span>Airport: Kannur CNN (45 km)<br/>Railway: Kannur CAN (50 km)</span>
                   </div>
                 </li>
               </ul>
@@ -417,19 +436,25 @@ export function Layout() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <h4 className="font-serif text-lg text-gold-400 mb-6">{t("footer.contact_us", "Contact Us")}</h4>
+              <h4 className="font-serif text-lg text-gold-400 mb-6">Sanctuary Address</h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-sm text-warm-50/60 group">
                   <MapPin className="w-5 h-5 text-gold-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                  <span dangerouslySetInnerHTML={{ __html: t("footer.address", "Vilakkannur, Naduvil P.O,<br />Kannur District, Kerala 670582") }} className="group-hover:text-white/80 transition-colors" />
+                  <Link to="/location" className="hover:text-white transition-colors">
+                    <span>Christ the King Church<br/>Vilakkannur, Naduvil P.O<br/>Kannur District, Kerala 670582</span>
+                  </Link>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-warm-50/60 group">
                   <Phone className="w-5 h-5 text-gold-400 shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="group-hover:text-white/80 transition-colors">{t("footer.phone", "+91 460 222 0000")}</span>
+                  <a href="tel:+919400062892" className="group-hover:text-emerald-400 transition-colors">
+                    +91 94000 62892
+                  </a>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-warm-50/60 group">
                   <Mail className="w-5 h-5 text-gold-400 shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="group-hover:text-white/80 transition-colors">{t("footer.email", "info@vilakkannurchurch.org")}</span>
+                  <a href="mailto:info@vilakkannurchurch.org" className="group-hover:text-white/80 transition-colors">
+                    info@vilakkannurchurch.org
+                  </a>
                 </li>
               </ul>
             </motion.div>

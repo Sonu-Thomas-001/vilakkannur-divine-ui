@@ -57,7 +57,7 @@ export default function Miracle() {
   ];
 
   return (
-    <div className="w-full bg-deep-black text-warm-100 overflow-hidden">
+    <div className="relative w-full bg-deep-black text-warm-100 overflow-hidden">
       <SEO 
         title="The Eucharistic Miracle of Vilakkannur | Vatican Recognized Catholic Miracle"
         description="Learn the timeline of the 2013 Eucharistic miracle at Vilakkannur Church, India, featuring the face of Jesus Christ. Vatican recognized in 2025."

@@ -66,15 +66,16 @@ export function Preloader({ onComplete }: { onComplete: () => void; key?: string
           />
         </div>
 
-        <motion.div className="overflow-hidden">
-          <motion.h1 
+        <motion.div className="overflow-hidden" aria-hidden="true">
+          <motion.div 
+            role="presentation"
             className="text-white font-serif text-xl md:text-2xl tracking-[0.2em] uppercase font-light text-center"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: isMobile ? 0.5 : 0.8, delay: isMobile ? 0.5 : 1, ease: [0.22, 1, 0.36, 1] }}
           >
             Christ King Church
-          </motion.h1>
+          </motion.div>
         </motion.div>
         
         <motion.div className="overflow-hidden mt-3">

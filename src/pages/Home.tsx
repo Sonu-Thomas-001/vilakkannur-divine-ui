@@ -53,26 +53,26 @@ export default function Home() {
   const ctaY = useTransform(ctaScroll, [0, 1], ["-20%", "0%"]);
 
   return (
-    <div className="w-full bg-deep-black text-warm-100 overflow-hidden">
+    <div className="relative w-full bg-deep-black text-warm-100 overflow-hidden">
       <SEO 
-        title="Christ the King Church Vilakkannur | Eucharistic Miracle Kerala"
-        description="Discover the Vatican-recognized Eucharistic miracle at Christ the King Church, Vilakkannur. Plan your spiritual pilgrimage to Kerala, India."
+        title="Vilakkannur Church | Christ the King Church & Eucharistic Miracle"
+        description="Official site of Vilakkannur Church (Christ the King Catholic Church, Kerala). Discover the Eucharistic Miracle, daily Mass timings, pilgrimage guide, and travel details."
         canonicalPath="/"
         schema={{
           "@context": "https://schema.org",
-          "@type": "Church",
-          "name": "Christ the King Church Vilakkannur",
-          "description": "A Vatican-recognized Eucharistic miracle church in Kerala, India.",
-          "image": "https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Vilakkannur, Naduvil P.O",
-            "addressLocality": "Kannur",
-            "addressRegion": "Kerala",
-            "postalCode": "670582",
-            "addressCountry": "IN"
-          },
-          "telephone": "+919400062892"
+          "@type": "WebSite",
+          "name": "Vilakkannur Church",
+          "alternateName": [
+            "Christ the King Church, Vilakkannur",
+            "Vilakkannur Eucharistic Miracle Sanctuary",
+            "ക്രിസ്തുരാജ ദേവാലയം വിളക്കന്നൂർ"
+          ],
+          "url": "https://vilakkannurchurch.vercel.app",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://vilakkannurchurch.vercel.app/faq?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
         }}
       />
       {/* 1. HERO SECTION */}
@@ -136,9 +136,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-            className="text-white mb-6 md:mb-8 max-w-6xl tracking-tight"
+            className="text-white mb-6 md:mb-8 max-w-6xl tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif"
           >
-            Christ King Church Vilakkannur <br /><span className='text-gradient-gold italic pr-4'>Eucharistic Miracle</span>
+            Vilakkannur Church <br />
+            <span className="text-gradient-gold italic pr-4 text-2xl sm:text-3xl md:text-5xl block mt-2">
+              Christ the King Church & Eucharistic Miracle
+            </span>
           </motion.h1>
 
           <motion.p
@@ -265,8 +268,8 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-16">
-            <Link to="/miracle" className="btn-gold text-lg px-8 py-4 inline-flex items-center gap-2">
-              Read the Full Story <ArrowRight className="w-5 h-5" />
+            <Link to="/eucharistic-miracle" className="btn-gold text-lg px-8 py-4 inline-flex items-center gap-2">
+              Read the Miracle Investigation <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -451,28 +454,58 @@ export default function Home() {
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
             <span className="text-emerald-400 font-serif italic text-xl mb-4 block tracking-widest uppercase">Plan Your Journey</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-white">Visitor Information</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-white">Visitor & Pilgrim Guides</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Clock className="w-8 h-8" />, title: "Mass Timings", desc: "Daily services and special adoration hours." },
-              { icon: <MapPin className="w-8 h-8" />, title: "How to Reach", desc: "Directions from Kannur Airport and major stations." },
-              { icon: <Calendar className="w-8 h-8" />, title: "Special Events", desc: "Annual feasts and pilgrimage schedules." }
+              { 
+                icon: <Clock className="w-8 h-8" />, 
+                title: "Mass Timings", 
+                desc: "Daily Qurbana, Sunday service schedule & Novena.", 
+                link: "/mass-timings" 
+              },
+              { 
+                icon: <MapPin className="w-8 h-8" />, 
+                title: "How to Reach", 
+                desc: "Directions from Kannur Airport, train stations & bus routes.", 
+                link: "/how-to-reach" 
+              },
+              { 
+                icon: <Calendar className="w-8 h-8" />, 
+                title: "Pilgrimage Guide", 
+                desc: "Monthly Second Saturday convention & sanctuary etiquette.", 
+                link: "/pilgrimage" 
+              },
+              { 
+                icon: <Sparkles className="w-8 h-8" />, 
+                title: "Nearby Stays", 
+                desc: "Family cottages, resort accommodation & group dorms.", 
+                link: "/nearby-stays" 
+              }
             ].map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: i * 0.2 }}
-                className="group card-glass text-center"
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                className="group card-glass text-center flex flex-col justify-between p-8"
               >
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-deep-black/50 border border-white/10 flex items-center justify-center mb-6 text-gold-400 group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-inner">
-                  {item.icon}
+                <div>
+                  <div className="w-16 h-16 mx-auto rounded-2xl bg-deep-black/50 border border-white/10 flex items-center justify-center mb-6 text-gold-400 group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-inner">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-2xl font-serif text-white mb-3">{item.title}</h3>
+                  <p className="text-warm-200/70 text-sm font-light mb-6 leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="text-2xl font-serif text-white mb-3">{item.title}</h3>
-                <p className="text-warm-200/60 text-lg font-light">{item.desc}</p>
+                <Link
+                  to={item.link}
+                  className="w-full py-2.5 rounded-full bg-white/5 border border-white/10 text-gold-300 text-xs font-medium uppercase tracking-wider group-hover:bg-gold-500 group-hover:text-deep-black transition-all flex items-center justify-center gap-1.5"
+                >
+                  <span>Explore Guide</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -500,20 +533,13 @@ export default function Home() {
               </div>
             ))}
           </div>
-          
-          {/* FAQ Schema */}
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                { "@type": "Question", "name": "Where is the Eucharistic Miracle of Vilakkannur located?", "acceptedAnswer": { "@type": "Answer", "text": "The miracle took place at Christ the King Church in Vilakkannur, a village in the Kannur district of Kerala, India." } },
-                { "@type": "Question", "name": "When did the Vilakkannur Eucharistic Miracle happen?", "acceptedAnswer": { "@type": "Answer", "text": "The miraculous event occurred on November 15, 2013, during a morning Holy Mass when the face of Jesus Christ appeared on the sacred host." } },
-                { "@type": "Question", "name": "Is the Vilakkannur miracle recognized by the Vatican?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, after years of rigorous scientific and theological investigation, the Vatican officially recognized the Eucharistic Miracle in 2025." } },
-                { "@type": "Question", "name": "How can I visit Christ King Church Vilakkannur?", "acceptedAnswer": { "@type": "Answer", "text": "Vilakkannur is accessible by road from Kannur city and the Kannur International Airport. The church is open daily for pilgrims and visitors." } }
-              ]
-            })}
-          </script>
+
+          <div className="text-center mt-12">
+            <Link to="/faq" className="btn-primary inline-flex items-center gap-2">
+              <span>View All 15+ Frequently Asked Questions</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
