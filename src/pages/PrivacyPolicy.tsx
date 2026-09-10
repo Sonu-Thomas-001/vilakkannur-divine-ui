@@ -1,11 +1,17 @@
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
+import { SEO } from "../components/SEO";
 
 export default function PrivacyPolicy() {
   const { t } = useTranslation();
 
   return (
     <div className="min-h-screen bg-ink pt-32 pb-20">
+      <SEO
+        title="Privacy Policy | Vilakkannur Church"
+        description="Privacy policy and data protection practices for visitors to the Christ the King Catholic Church website in Vilakkannur, Kerala."
+        canonicalPath="/privacy"
+      />
       {/* Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-emerald-900/20 rounded-full blur-[120px] opacity-50"></div>

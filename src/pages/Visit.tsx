@@ -77,21 +77,7 @@ export default function Visit() {
         </motion.div>
       </section>
 
-      {/* FAQ Schema */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq.answer
-            }
-          }))
-        })}
-      </script>
+      {/* Main Content Grid */}
 
       {/* Main Content Grid */}
       <section className="section-padding relative z-10">
@@ -384,7 +370,7 @@ export default function Visit() {
                     </p>
                   </div>
                   <Link 
-                    to="/stays"
+                    to="/nearby-stays"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-emerald-600/20 text-emerald-400 font-medium text-sm tracking-wide transition-all duration-300 hover:bg-emerald-600/30 hover:text-white border border-emerald-500/30 hover:border-emerald-500/50 whitespace-nowrap group-hover:scale-105"
                   >
                     View Nearby Stays

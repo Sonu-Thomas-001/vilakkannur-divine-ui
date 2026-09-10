@@ -91,11 +91,6 @@ export function SEO({
         closes: '20:00',
       },
     ],
-    sameAs: [
-      'https://www.facebook.com',
-      'https://www.instagram.com',
-      'https://www.youtube.com',
-    ],
   };
 
   // Build schema list

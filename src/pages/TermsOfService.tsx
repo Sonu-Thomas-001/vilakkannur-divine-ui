@@ -1,11 +1,17 @@
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
+import { SEO } from "../components/SEO";
 
 export default function TermsOfService() {
   const { t } = useTranslation();
 
   return (
     <div className="min-h-screen bg-ink pt-32 pb-20">
+      <SEO
+        title="Terms of Service | Vilakkannur Church"
+        description="Terms and conditions for accessing the official website of Christ the King Church, Vilakkannur, Kerala."
+        canonicalPath="/terms"
+      />
       {/* Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gold-900/10 rounded-full blur-[120px] opacity-50"></div>

@@ -15,6 +15,28 @@ export default defineConfig(({mode}) => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              if (id.includes('motion')) {
+                return 'vendor-motion';
+              }
+              if (id.includes('lucide-react')) {
+                return 'vendor-icons';
+              }
+              if (id.includes('i18next') || id.includes('react-i18next')) {
+                return 'vendor-i18n';
+              }
+              if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom') || id.includes('react-helmet-async')) {
+                return 'vendor-framework';
+              }
+            }
+          },
+        },
+      },
+    },
     server: {
       host: '0.0.0.0',
       port: 3000,

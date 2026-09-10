@@ -230,7 +230,7 @@ export default function Home() {
       {/* 3. EUCHARISTIC MIRACLE STORY (IMMERSIVE) */}
       <section ref={storyRef} className="section-padding relative bg-ink border-y border-white/5 overflow-hidden">
         <motion.div style={{ y: isMobile ? "0%" : storyY }} className="absolute inset-0 opacity-10 pointer-events-none">
-          <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%201.jpg" className="w-full h-full object-cover mix-blend-screen" alt="" />
+          <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%201.jpg" className="w-full h-full object-cover mix-blend-screen" alt="Vilakkannur Eucharistic Miracle sanctuary background" />
         </motion.div>
         
         <div className="container mx-auto max-w-5xl relative z-10">
@@ -286,7 +286,7 @@ export default function Home() {
             {/* Large Image */}
             <motion.div style={{ y: isMobile ? "0%" : gridY1 }} className="md:col-span-8 relative rounded-3xl overflow-hidden group h-full">
               <Link to="/gallery" className="block w-full h-full">
-                <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor.webp" loading="lazy" alt="Eucharistic Miracle" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+                <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/eucharistic-miracle-vilakkannoor.webp" loading="lazy" alt="Vilakkannur Eucharistic Miracle Sacred Host in monstrance" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
                 <div className="absolute bottom-8 left-8 z-10">
                   <h3 className="text-3xl font-serif text-white mb-2">The Sacred Host</h3>
@@ -299,7 +299,7 @@ export default function Home() {
               {/* Top Small Image */}
               <motion.div style={{ y: isMobile ? "0%" : gridY2 }} className="relative rounded-3xl overflow-hidden group flex-1">
                 <Link to="/gallery" className="block w-full h-full">
-                  <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2010.jpg" loading="lazy" alt="Pilgrims" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2010.jpg" loading="lazy" alt="Devout pilgrims venerating the Eucharistic Miracle at Vilakkannur Church" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
                   <div className="absolute bottom-6 left-6 z-10">
                     <h3 className="text-xl font-serif text-white">Pilgrimage</h3>
@@ -310,7 +310,7 @@ export default function Home() {
               {/* Bottom Small Image */}
               <motion.div style={{ y: isMobile ? "0%" : gridY1 }} className="relative rounded-3xl overflow-hidden group flex-1">
                 <Link to="/gallery" className="block w-full h-full">
-                  <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2013.jpg" loading="lazy" alt="Candles" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+                  <img src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/miracle%2013.jpg" loading="lazy" alt="Prayer candles burning before the Eucharistic Miracle sanctuary at Vilakkannur Church" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
                   <div className="absolute bottom-6 left-6 z-10">
                     <h3 className="text-xl font-serif text-white">Devotion</h3>
