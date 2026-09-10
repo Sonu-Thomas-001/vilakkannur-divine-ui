@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
-import { Menu, X, MapPin, Phone, Mail, ChevronRight, Clock, Car, Instagram, Youtube, Facebook, BedDouble } from "lucide-react";
+import { Menu, X, MapPin, Phone, Mail, ChevronRight, Clock, Car, Youtube, BedDouble } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { cn } from "../lib/utils";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -463,13 +463,13 @@ export function Layout() {
           {/* 3. SOCIAL & CONNECT + 4. BOTTOM BAR */}
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-emerald-600 hover:text-white hover:shadow-[0_0_15px_rgba(5,150,105,0.5)] transition-all duration-300 hover:-translate-y-1">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-emerald-600 hover:text-white hover:shadow-[0_0_15px_rgba(5,150,105,0.5)] transition-all duration-300 hover:-translate-y-1">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-emerald-600 hover:text-white hover:shadow-[0_0_15px_rgba(5,150,105,0.5)] transition-all duration-300 hover:-translate-y-1">
+              <a
+                href="https://youtube.com/@holyfacevilakkannur1968"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Official Vilakkannur Church YouTube Channel"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:bg-emerald-600 hover:text-white hover:shadow-[0_0_15px_rgba(5,150,105,0.5)] transition-all duration-300 hover:-translate-y-1"
+              >
                 <Youtube className="w-5 h-5" />
               </a>
             </div>

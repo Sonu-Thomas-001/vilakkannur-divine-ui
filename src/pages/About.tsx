@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { MapPin, History, Users, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { SEO } from "../components/SEO";
@@ -18,7 +19,7 @@ export default function About() {
         <div className="absolute inset-0 z-0 bg-deep-black">
           <img
             src="https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg"
-            alt="Church Exterior"
+            alt="Christ the King Catholic Church exterior facade in Vilakkannur, Kerala"
             className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
             referrerPolicy="no-referrer"
           />
@@ -175,7 +176,7 @@ export default function About() {
               </div>
               <h3 className="text-2xl md:text-3xl font-serif text-white mb-4 md:mb-6">{t("about.growth.community.title", "Community Growth")}</h3>
               <p className="text-warm-200/60 text-base md:text-lg leading-relaxed font-light">
-                Following the <a href="/miracle" className="text-gold-400 hover:text-gold-300 underline decoration-gold-400/30 underline-offset-4 transition-colors">Eucharistic Miracle of 2013</a> and its subsequent Vatican recognition in 2025, the church experienced unprecedented growth. The local community expanded its mission to welcome, house, and guide the massive influx of pilgrims, transforming the village economy and social fabric while maintaining its spiritual core.
+                Following the <Link to="/eucharistic-miracle" className="text-gold-400 hover:text-gold-300 underline decoration-gold-400/30 underline-offset-4 transition-colors">Eucharistic Miracle of 2013</Link> and its subsequent Vatican recognition in 2025, the church experienced unprecedented growth. The local community expanded its mission to welcome, house, and guide the massive influx of pilgrims, transforming the village economy and social fabric while maintaining its spiritual core.
               </p>
             </motion.div>
 

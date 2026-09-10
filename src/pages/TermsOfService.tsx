@@ -11,6 +11,7 @@ export default function TermsOfService() {
         title="Terms of Service | Vilakkannur Church"
         description="Terms and conditions for accessing the official website of Christ the King Church, Vilakkannur, Kerala."
         canonicalPath="/terms"
+        noIndex={true}
       />
       {/* Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">

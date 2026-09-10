@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
 import { Globe } from 'lucide-react';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { cn } from '../lib/utils';
 
 const languages = [
@@ -15,8 +16,27 @@ export function LanguageSwitcher({ isScrolled }: { isScrolled: boolean }) {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const currentLang = languages.find(l => i18n.language?.startsWith(l.code)) || languages[0];
+
+  // Synchronize language state with URL ?lng= query parameter on initial load or browser back/forward
+  useEffect(() => {
+    const urlLng = searchParams.get('lng');
+    if (urlLng && ['ml', 'hi', 'ta'].includes(urlLng)) {
+      if (i18n.language !== urlLng) {
+        i18n.changeLanguage(urlLng);
+      }
+    } else if (!urlLng && searchParams.has('lng')) {
+      // Clean up stray/invalid lng parameter
+      const params = new URLSearchParams(location.search);
+      params.delete('lng');
+      const search = params.toString();
+      navigate(`${location.pathname}${search ? `?${search}` : ''}${location.hash}`, { replace: true });
+    }
+  }, [searchParams, location.pathname, location.search, location.hash, i18n, navigate]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -40,6 +60,19 @@ export function LanguageSwitcher({ isScrolled }: { isScrolled: boolean }) {
   const changeLanguage = (code: string) => {
     i18n.changeLanguage(code);
     setIsOpen(false);
+
+    // Canonical language URL strategy:
+    // English -> clean canonical URL (no query param)
+    // ml / hi / ta -> ?lng=code
+    const params = new URLSearchParams(location.search);
+    if (code === 'en') {
+      params.delete('lng');
+    } else {
+      params.set('lng', code);
+    }
+    const search = params.toString();
+    const targetUrl = `${location.pathname}${search ? `?${search}` : ''}${location.hash}`;
+    navigate(targetUrl, { replace: true });
   };
 
   return (

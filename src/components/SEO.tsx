@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { SEO_LOCALIZED_DICTIONARY } from '../lib/seoTranslations';
 
 export const SITE_URL = 'https://vilakkannurchurch.vercel.app';
 export const DEFAULT_OG_IMAGE = 'https://cdn.jsdelivr.net/gh/Sonu-Thomas-001/image-host@master/Vilakkannur%20img/church.jpg';
@@ -44,6 +45,12 @@ export function SEO({
     ? `${SITE_URL}${cleanPath || '/'}?lng=${currentLang}`
     : baseUrl;
 
+  // Localized meta title and description for multilingual SEO
+  const lookupKey = cleanPath || '/';
+  const localizedData = SEO_LOCALIZED_DICTIONARY[currentLang]?.[lookupKey];
+  const activeTitle = localizedData?.title || title;
+  const activeDescription = localizedData?.description || description;
+
   // Organization baseline schema
   const defaultOrgSchema = {
     '@context': 'https://schema.org',
@@ -57,6 +64,7 @@ export function SEO({
       'ക്രിസ്തുരാജ ദേവാലയം വിളക്കന്നൂർ',
     ],
     url: SITE_URL,
+    sameAs: ['https://youtube.com/@holyfacevilakkannur1968'],
     logo: `${SITE_URL}/logos/logo-icon.svg`,
     image: DEFAULT_OG_IMAGE,
     description:
@@ -118,9 +126,9 @@ export function SEO({
       <html lang={currentLang} />
 
       {/* Primary HTML Meta Tags */}
-      <title>{title}</title>
-      <meta name="title" content={title} />
-      <meta name="description" content={description} />
+      <title>{activeTitle}</title>
+      <meta name="title" content={activeTitle} />
+      <meta name="description" content={activeDescription} />
       <link rel="canonical" href={activeCanonical} />
 
       {/* Crawl & Index Directives */}
@@ -147,8 +155,8 @@ export function SEO({
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content="Christ the King Church, Vilakkannur" />
       <meta property="og:url" content={activeCanonical} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={activeTitle} />
+      <meta property="og:description" content={activeDescription} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -157,8 +165,8 @@ export function SEO({
       {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={activeCanonical} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={activeTitle} />
+      <meta name="twitter:description" content={activeDescription} />
       <meta name="twitter:image" content={ogImage} />
 
       {/* Baseline Church Organization Schema */}

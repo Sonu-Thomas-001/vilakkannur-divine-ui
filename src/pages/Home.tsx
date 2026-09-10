@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
+import { motion, useScroll, useTransform, AnimatePresence, useReducedMotion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Clock, Sparkles, Calendar } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -16,7 +16,11 @@ const heroImages = [
 export default function Home() {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
+  const prefersReducedMotion = useReducedMotion();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Responsive particle density: 0 if reduced motion, 8 on mobile, 20 on desktop
+  const particleCount = prefersReducedMotion ? 0 : (isMobile ? 8 : 20);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -96,30 +100,32 @@ export default function Home() {
           <div className="glow-emerald w-[1000px] h-[1000px] bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 opacity-40 pointer-events-none"></div>
         </motion.div>
 
-        {/* Particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-          {[...Array(25)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1.5 h-1.5 bg-gold-300/30 rounded-full blur-[1px]"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -100 - Math.random() * 100],
-                x: [0, (Math.random() - 0.5) * 50],
-                opacity: [0, Math.random() * 0.5 + 0.2, 0],
-              }}
-              transition={{
-                duration: Math.random() * 10 + 10,
-                repeat: Infinity,
-                ease: "linear",
-                delay: Math.random() * 5,
-              }}
-            />
-          ))}
-        </div>
+        {/* Particles (optimized for mobile viewports & respecting prefers-reduced-motion) */}
+        {particleCount > 0 && (
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            {[...Array(particleCount)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1.5 h-1.5 bg-gold-300/30 rounded-full blur-[1px]"
+                style={{
+                  left: `${((i * 19 + 7) % 100)}%`,
+                  top: `${((i * 31 + 13) % 100)}%`,
+                }}
+                animate={{
+                  y: [0, -100 - (i % 5) * 20],
+                  x: [0, ((i % 3) - 1) * 25],
+                  opacity: [0, 0.4, 0],
+                }}
+                transition={{
+                  duration: 12 + (i % 4) * 3,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: (i % 5) * 1.2,
+                }}
+              />
+            ))}
+          </div>
+        )}
 
         <div className="relative z-10 container mx-auto px-6 md:px-12 text-center flex flex-col items-center mt-20">
           <motion.div

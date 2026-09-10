@@ -11,6 +11,7 @@ export default function PrivacyPolicy() {
         title="Privacy Policy | Vilakkannur Church"
         description="Privacy policy and data protection practices for visitors to the Christ the King Catholic Church website in Vilakkannur, Kerala."
         canonicalPath="/privacy"
+        noIndex={true}
       />
       {/* Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
