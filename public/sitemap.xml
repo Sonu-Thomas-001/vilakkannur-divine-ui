@@ -1,80 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- 1. Homepage -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/</loc>
     <lastmod>2026-03-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/" />
   </url>
+
+  <!-- 2. Eucharistic Miracle (High Authority Story & Scientific Dossier) -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/eucharistic-miracle</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/eucharistic-miracle?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/eucharistic-miracle?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/eucharistic-miracle?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/eucharistic-miracle?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/eucharistic-miracle" />
   </url>
+
+  <!-- 3. Holy Mass Timings & Adoration Schedule -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/mass-timings</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/mass-timings?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/mass-timings?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/mass-timings?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/mass-timings?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/mass-timings" />
   </url>
+
+  <!-- 4. How to Reach (Railway Station, Airport & Roads) -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/how-to-reach</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/how-to-reach?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/how-to-reach?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/how-to-reach?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/how-to-reach?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/how-to-reach" />
   </url>
+
+  <!-- 5. Plan Your Visit & Pilgrim Guide -->
+  <url>
+    <loc>https://vilakkannurchurch.vercel.app/visit</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/visit?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/visit?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/visit?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/visit?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/visit" />
+  </url>
+
+  <!-- 6. Church Location, Address & Coordinates -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/location</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/location?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/location?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/location?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/location?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/location" />
   </url>
+
+  <!-- 7. Pilgrimage & Second Saturday Convention -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/pilgrimage</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/pilgrimage?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/pilgrimage?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/pilgrimage?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/pilgrimage?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/pilgrimage" />
   </url>
+
+  <!-- 8. Nearby Stays, Resorts & Accommodation -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/nearby-stays</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/nearby-stays?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/nearby-stays?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/nearby-stays?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/nearby-stays?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/nearby-stays" />
   </url>
+
+  <!-- 9. Frequently Asked Questions (FAQ) -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/faq</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/faq?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/faq?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/faq?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/faq?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/faq" />
   </url>
+
+  <!-- 10. About Parish Heritage & History -->
+  <url>
+    <loc>https://vilakkannurchurch.vercel.app/about</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/about?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/about?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/about?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/about?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/about" />
+  </url>
+
+  <!-- 11. Photo Gallery -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/gallery</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/gallery?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/gallery?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/gallery?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/gallery?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/gallery" />
   </url>
-  <url>
-    <loc>https://vilakkannurchurch.vercel.app/about</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
+
+  <!-- 12. Contact & Parish Office Desk -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/contact</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vilakkannurchurch.vercel.app/contact?lng=en" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://vilakkannurchurch.vercel.app/contact?lng=ml" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://vilakkannurchurch.vercel.app/contact?lng=hi" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vilakkannurchurch.vercel.app/contact?lng=ta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vilakkannurchurch.vercel.app/contact" />
   </url>
+
+  <!-- 13. Privacy Policy -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/privacy</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
+
+  <!-- 14. Terms of Service -->
   <url>
     <loc>https://vilakkannurchurch.vercel.app/terms</loc>
     <lastmod>2026-03-10</lastmod>

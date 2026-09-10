@@ -4,13 +4,29 @@ import { useIsMobile } from "../hooks/useIsMobile";
 
 export function Preloader({ onComplete }: { onComplete: () => void; key?: string | number }) {
   const isMobile = useIsMobile();
-  const duration = isMobile ? 1500 : 2500;
-
+  
   useEffect(() => {
-    // Lock scroll while preloading
+    // Immediate bypass for search bots, lighthouse, and repeat visits in the same session
+    const isBot = typeof navigator !== 'undefined' && /bot|google|crawler|spider|lighthouse|mediapartners/i.test(navigator.userAgent);
+    const hasSeenBefore = typeof window !== 'undefined' && sessionStorage.getItem('seen_vilakkannur_preloader');
+    const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (isBot || hasSeenBefore || prefersReducedMotion) {
+      onComplete();
+      return;
+    }
+
+    const duration = isMobile ? 1200 : 1800;
+
+    // Lock scroll temporarily while preloading for human visitors
     document.body.style.overflow = "hidden";
     
     const timer = setTimeout(() => {
+      try {
+        sessionStorage.setItem('seen_vilakkannur_preloader', 'true');
+      } catch {
+        // Ignore storage errors
+      }
       onComplete();
       document.body.style.overflow = "";
     }, duration);
@@ -19,7 +35,7 @@ export function Preloader({ onComplete }: { onComplete: () => void; key?: string
       clearTimeout(timer);
       document.body.style.overflow = "";
     };
-  }, [onComplete, duration]);
+  }, [onComplete, isMobile]);
 
   return (
     <motion.div

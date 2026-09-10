@@ -12,6 +12,7 @@ interface SEOProps {
   ogImage?: string;
   schema?: Record<string, any> | Record<string, any>[];
   noIndex?: boolean;
+  noindex?: boolean;
 }
 
 export function SEO({
@@ -22,14 +23,26 @@ export function SEO({
   ogImage = DEFAULT_OG_IMAGE,
   schema,
   noIndex = false,
+  noindex = false,
 }: SEOProps) {
   const { i18n } = useTranslation();
+  const shouldNoIndex = noIndex || noindex;
 
-  // Normalize path
-  const normalizedPath = canonicalPath.startsWith('/')
+  // Determine current language code
+  const currentLang = i18n.language ? i18n.language.split('-')[0] : 'en';
+
+  // Normalize path without trailing slash (except root)
+  const rawPath = canonicalPath.startsWith('/')
     ? canonicalPath
     : canonicalPath ? `/${canonicalPath}` : '';
-  const canonicalUrl = `${SITE_URL}${normalizedPath}`;
+  const cleanPath = rawPath === '/' ? '' : rawPath.replace(/\/+$/, '');
+  const baseUrl = `${SITE_URL}${cleanPath || '/'}`;
+
+  // Self-referencing canonical for current language variant if query is present
+  const isQueryLang = typeof window !== 'undefined' && window.location.search.includes('lng=');
+  const activeCanonical = isQueryLang && currentLang !== 'en'
+    ? `${SITE_URL}${cleanPath || '/'}?lng=${currentLang}`
+    : baseUrl;
 
   // Organization baseline schema
   const defaultOrgSchema = {
@@ -96,7 +109,6 @@ export function SEO({
   }
 
   // Determine language locale for OG
-  const currentLang = i18n.language ? i18n.language.split('-')[0] : 'en';
   const ogLocaleMap: Record<string, string> = {
     en: 'en_US',
     ml: 'ml_IN',
@@ -107,14 +119,17 @@ export function SEO({
 
   return (
     <Helmet>
+      {/* HTML Language tag sync */}
+      <html lang={currentLang} />
+
       {/* Primary HTML Meta Tags */}
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonicalUrl} />
+      <link rel="canonical" href={activeCanonical} />
 
       {/* Crawl & Index Directives */}
-      {noIndex ? (
+      {shouldNoIndex ? (
         <meta name="robots" content="noindex, nofollow" />
       ) : (
         <>
@@ -126,17 +141,17 @@ export function SEO({
         </>
       )}
 
-      {/* Multilingual Alternate URLs (Distinct URLs per language code) */}
-      <link rel="alternate" hrefLang="en" href={`${canonicalUrl}${normalizedPath.includes('?') ? '&' : '?'}lng=en`} />
-      <link rel="alternate" hrefLang="ml" href={`${canonicalUrl}${normalizedPath.includes('?') ? '&' : '?'}lng=ml`} />
-      <link rel="alternate" hrefLang="hi" href={`${canonicalUrl}${normalizedPath.includes('?') ? '&' : '?'}lng=hi`} />
-      <link rel="alternate" hrefLang="ta" href={`${canonicalUrl}${normalizedPath.includes('?') ? '&' : '?'}lng=ta`} />
-      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+      {/* Multilingual Alternate URLs (Hreflang for international SEO) */}
+      <link rel="alternate" hrefLang="en" href={baseUrl} />
+      <link rel="alternate" hrefLang="ml" href={`${baseUrl}?lng=ml`} />
+      <link rel="alternate" hrefLang="hi" href={`${baseUrl}?lng=hi`} />
+      <link rel="alternate" hrefLang="ta" href={`${baseUrl}?lng=ta`} />
+      <link rel="alternate" hrefLang="x-default" href={baseUrl} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content="Christ the King Church, Vilakkannur" />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={activeCanonical} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
@@ -146,7 +161,7 @@ export function SEO({
 
       {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={canonicalUrl} />
+      <meta name="twitter:url" content={activeCanonical} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />

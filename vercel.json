@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/miracle",
+      "destination": "/eucharistic-miracle",
+      "permanent": true
+    },
+    {
+      "source": "/stays",
+      "destination": "/nearby-stays",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/|.*\\.(?:xml|txt|png|jpg|jpeg|svg|webp|json|ico|css|js)).*)",
@@ -31,8 +43,29 @@
           "value": "text/plain; charset=utf-8"
         },
         {
+          "key": "X-Robots-Tag",
+          "value": "all"
+        },
+        {
           "key": "Cache-Control",
           "value": "public, max-age=3600, s-maxage=3600"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
       ]
     }
